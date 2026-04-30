@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://scalewithmanish-com-95qw.vercel.app/sitemap.xml
+Sitemap:https://scalewithmanish-com.vercel.app/sitemap.xml
