@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://scalewithmanish-com.vercel.app/</loc>
-  </url>
-  
-  <url>
-    <loc>https://scalewithmanish-com.vercel.app/pricing</loc>
-  </url>
-
-  <url>
-    <loc>https://scalewithmanish-com.vercel.app/privacy_policy</loc>
-  </url>
-
-  <url>
-    <loc>https://scalewithmanish-com.vercel.app/term-condition</loc>
-  </url>
+   <url>
+      <loc>https://scalewithmanish-com.vercel.app/</loc>
+   </url>
+   <url>
+      <loc>https://scalewithmanish-com.vercel.app/pricing</loc>
+   </url>
+   <url>
+      <loc>https://scalewithmanish-com.vercel.app/privacy_policy</loc>
+   </url>
+   <url>
+      <loc>https://scalewithmanish-com.vercel.app/term-condition</loc>
+   </url>
 </urlset>
