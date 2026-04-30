@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://scalewithmanish-com-95qw.vercel.app/sitemap.xml
