@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116519114"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -11,7 +11,7 @@ gtag('js', new Date());
 gtag('config', 'AW-18116519114');
 </script>
 
-<!-- Google Tag Manager -->
+<!-- GTM -->
 <script>
 (function(w,d,s,l,i){
 w[l]=w[l]||[];
@@ -29,102 +29,43 @@ f.parentNode.insertBefore(j,f);
 <title>ScaleWithManish.com</title>
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-font-family:Inter,Arial,sans-serif;
-background:#ffffff;
-color:#111827;
-line-height:1.7;
-overflow-x:hidden;
-}
-
-img{
-max-width:100%;
-height:auto;
-display:block;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,Arial;background:#fff;color:#111827;line-height:1.7;padding-top:60px}
+img{max-width:100%}
 
 header{
-position:sticky;
-top:0;
-background:#fff;
-padding:18px 40px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:15px;
-flex-wrap:wrap;
-box-shadow:0 4px 18px rgba(0,0,0,.06);
-z-index:999;
+position:sticky;top:0;background:#fff;padding:15px 20px;
+display:flex;justify-content:space-between;align-items:center;
+box-shadow:0 4px 18px rgba(0,0,0,.06);z-index:999;
 }
 
-section{
-padding:90px 20px;
-}
-
-.container{
-max-width:1180px;
-margin:auto;
-width:100%;
-}
+.container{max-width:1100px;margin:auto;padding:0 15px}
+section{padding:70px 15px}
 
 .btn{
-background:#111827;
-color:#fff;
-padding:14px 26px;
-border-radius:8px;
-text-decoration:none;
-display:inline-block;
-font-weight:700;
-text-align:center;
+background:#111827;color:#fff;padding:14px 24px;
+border-radius:8px;text-decoration:none;font-weight:700;
+display:inline-block;text-align:center;
 }
 
 .hero{
 background:linear-gradient(135deg,#f8fafc,#eef2ff);
-padding:130px 20px;
+text-align:center;padding:100px 15px;
 }
+
+h1{font-size:42px;margin-bottom:15px}
+h2{text-align:center;font-size:32px;margin-bottom:25px}
+.sub{font-size:18px;color:#4b5563}
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;margin-top:25px;
 }
 
 .card{
-background:#fff;
-padding:30px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
-}
-
-h1{
-font-size:60px;
-line-height:1.1;
-margin-bottom:18px;
-}
-
-h2{
-text-align:center;
-font-size:42px;
-margin-bottom:36px;
-}
-
-h3{
-color:#2563eb;
-font-size:24px;
-margin-bottom:10px;
-}
-
-.sub{
-font-size:20px;
-color:#4b5563;
-max-width:860px;
-margin:auto;
+background:#fff;padding:22px;border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
 }
 
 .dark{
@@ -132,328 +73,195 @@ background:#111827;
 color:#fff;
 }
 
+.dark .card{
+background:#1f2937;
+color:#fff;
+}
+
+.dark .card h3{
+color:#60a5fa;
+}
+
 footer{
-background:#0f172a;
-color:#cbd5e1;
-padding:50px 20px;
-text-align:center;
-}
-
-footer a{
-color:#22c55e;
-text-decoration:none;
+background:#0f172a;color:#cbd5e1;
+padding:40px 20px;text-align:center;
 }
 
 .wa{
-position:fixed;
-right:20px;
-bottom:20px;
-background:#25D366;
-color:#fff;
-padding:15px 18px;
-border-radius:50px;
+position:fixed;bottom:15px;right:15px;
+background:#25D366;color:#fff;
+padding:12px 16px;border-radius:40px;
 text-decoration:none;
-z-index:999;
 }
 
-/* Tablet */
-@media(max-width:991px){
-h1{font-size:48px;}
-h2{font-size:34px;}
-.hero{padding:100px 20px;}
-}
-
-/* Mobile */
-@media(max-width:768px){
-
-header{
-flex-direction:column;
-padding:15px;
-text-align:center;
-}
-
-header img{
-width:180px !important;
-margin:auto;
-}
-
-.btn{
-width:100%;
-max-width:320px;
-margin:5px auto;
-}
-
-section{
-padding:60px 15px;
-}
-
-.hero{
-padding:80px 15px;
-}
-
-h1{
-font-size:34px;
-}
-
-h2{
-font-size:28px;
-margin-bottom:24px;
-}
-
-h3{
-font-size:20px;
-}
-
-.sub{
-font-size:17px;
-}
-
-.grid{
-grid-template-columns:1fr;
-gap:18px;
-}
-
-.card{
-padding:22px;
-}
-
-.wa{
-right:12px;
-bottom:12px;
-padding:12px 16px;
-font-size:14px;
-}
-}
-
-/* Small Mobile */
-@media(max-width:768px){
-h1{font-size:30px;}
-h2{font-size:24px;}
-.sub{font-size:16px;}
-}
+/* TOP BAR */
 .top-offer{
-position:fixed;
-top:0;
-left:0;
-width:50%;
-background:#f20519;
-color:#fff;
-text-align:center;
-padding:10px;
-font-weight:600;
+position:fixed;top:0;width:100%;
+background:#2563eb;color:#fff;
+text-align:center;padding:10px;font-weight:600;
 z-index:9999;
-overflow:hidden;
-white-space:nowrap;
-animation:scrollText 12s linear infinite;
 }
 
-..top-offer{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-background:#2563eb;
-color:#fff;
-text-align:center;
-padding:10px;
-font-weight:600;
-z-index:9999;
-white-space:nowrap;
-overflow:hidden;
-animation:scrollText 12s linear infinite;
-}
-
-.top-offer a{
-color:#fff;
-text-decoration:underline;
-margin-left:8px;
-}
-
-/* animation */
-@keyframes scrollText{
-0%{transform:translateX(100%)}
-100%{transform:translateX(-100%)}
-}
-
-/* ✅ MOBILE FIX */
+/* MOBILE */
 @media(max-width:768px){
-
-.top-offer{
-white-space:normal;
-animation:scrollText 12s linear infinite;
-font-size:13px;
-padding:12px 10px;
+h1{font-size:28px}
+h2{font-size:24px}
+.btn{width:100%}
 }
-
-}
-
-/* spacing fix */
-body{
-padding-top:50px;
-}</style>
-</head>
-
+</style>
 
 </head>
-
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5DQG8HK"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
-  <div class="top-offer">
-🎁 Free Ad Account Audit (Worth ₹5,000) | 
-<a href="https://wa.me/918076509729">Claim Now</a>
+<!-- GTM -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5DQG8HK"
+height="0" width="0" style="display:none"></iframe></noscript>
+
+<!-- TOP BAR -->
+<div class="top-offer">
+🎁 Free Ads Audit (₹5,000 Value) →
+<a href="https://wa.me/918076509729" style="color:#fff;text-decoration:underline;">Claim Now</a>
 </div>
 
+<!-- HEADER -->
+<header>
+<img src='https://i.ibb.co/SD5vVLcT/logo-swmc-removebg-preview.png' style='width:180px'>
+<a href='https://wa.me/918076509729' class='btn'>Book Free Call</a>
+</header>
 
-<header><img src='https://i.ibb.co/SD5vVLcT/logo-swmc-removebg-preview.png' style='width:220px'><a href='https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/viewform?usp=header' class='btn'>Book Consultation</a></header><section class='hero'><div class='container'><h1>
-Media Buying That Drives <br>
-
-<span id="changingText" style="color:#2563eb;">
-Growth
-</span>
-
-</h1>
-
-<script>
-const words = ["Growth","Scale","Revenue","Leads","ROAS","Profit"];
-let i = 0;
-
-setInterval(function(){
-document.getElementById("changingText").innerText = words[i];
-i = (i + 1) % words.length;
-},1800);
-</script><p class='sub'>We help brands grow with strategic media buying across Google Ads, Meta Ads, LinkedIn & performance channels with measurable ROI.</p><br><div style="display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
-
-<a href="https://wa.me/918076509729" class="btn">
-Get Free Strategy Call
-</a>
-
-<a href="https://pricing-phi-seven.vercel.app/"
-class="btn"
-style="background:#2563eb;"
-target="_self">
-View Pricing Plans
-</a>
-  
-</div></div></section><section><div class='container'><h2>Our Core Services</h2><div class='grid'><div class='card'><h3>Google Ads Management</h3><p>Search, Shopping, PMax, Display & Lead Generation campaigns built for growth.</p></div><div class='card'><h3>Paid Social Advertising</h3><p>Meta Ads, Snapchat Ads & LinkedIn Ads for scalable customer acquisition.</p></div><div class='card'><h3>Analytics & Tracking</h3><p>GA4, GTM, conversion APIs, event tracking & reporting infrastructure.</p></div><div class='card'><h3>eCommerce Growth</h3><p>Shopify optimization, GMC feed fixes and profitable scaling systems.</p></div></div></div></section><section class='dark'><div class='container'><h2>Why Brands Choose ScaleWithManish</h2><div class='grid'><div class='card'><h3>Data-First Scaling Strategy</h3><p>Budget decisions driven by data, not assumptions.</p></div><div class='card'><h3>Weekly Optimization Discipline</h3><p>Continuous testing, refinements, bid changes & search term mining.</p></div><div class='card'><h3>Strong CPL / CPA Control</h3><p>Focused on lowering acquisition cost while increasing quality.</p></div><div class='card'><h3>Premium Reporting</h3><p>Clear communication, transparent dashboards and growth planning.</p></div></div></div></section><section><div class='container'><h2>Case Study: Neupril</h2><p class='sub'>Structured Google Ads scaling for a premium supplement brand.</p><div class='grid' style='margin-top:30px'><div class='card'><h3>$1.43M+</h3><p>Revenue Generated</p></div><div class='card'><h3>12,371</h3><p>Conversions</p></div><div class='card'><h3>2.81x</h3><p>ROAS</p></div><div class='card'><h3>$274K+</h3><p>Spend Managed</p></div></div><br><img src='https://i.ibb.co/1GHzyjfg/cs.png' style='max-width:100%;border-radius:16px'></div>
-<section style="background:#f8fafc;padding:90px 20px;">
+<!-- HERO -->
+<section class="hero">
 <div class="container">
 
-<h2>Certified & Verified Expertise</h2>
-<p class="sub" style="text-align:center;margin-bottom:40px;">
-Industry-recognized certifications that validate advanced advertising skills.
+<h1>Scale Your Business with High-Converting Ads</h1>
+
+<p class="sub">
+Get more leads & sales without wasting ad spend using proven Google & Meta strategies.
 </p>
 
+<p style="margin-top:10px;font-weight:600;">
+₹25L+ Ad Spend Managed | Trusted by Growing Brands
+</p>
+
+<div style="margin-top:25px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+<a href="https://wa.me/918076509729" class="btn">Get Free Audit</a>
+<a href="https://pricing-phi-seven.vercel.app/" class="btn" style="background:#2563eb;">View Pricing</a>
+</div>
+
+</div>
+</section>
+
+<!-- PROBLEM -->
+<section>
+<div class="container">
+<h2>Why Most Ads Fail</h2>
+
 <div class="grid">
-
-<div class="card">
-<h3>Google Ads Certification</h3>
-<p>Verified Skill Credential</p>
-<a href="https://verify.skilljar.com/c/gxnuerycru62" target="_blank" class="btn">View Certificate</a>
+<div class="card">❌ Wrong targeting = wasted budget</div>
+<div class="card">❌ No tracking = no data</div>
+<div class="card">❌ Bad creatives = low conversions</div>
+<div class="card">❌ No scaling strategy</div>
 </div>
 
-<div class="card">
-<h3>Google Search Ads</h3>
-<p>Official Skillshop Credential</p>
-<a href="https://skillshop.credential.net/2c8e010e-1fe9-4ed8-942c-151f78d3c2e9#acc.7N49Ulso" target="_blank" class="btn">View Certificate</a>
-</div>
-
-<div class="card">
-<h3>Google Display Ads</h3>
-<p>Official Skillshop Credential</p>
-<a href="https://skillshop.credential.net/21f9cfe0-ef8d-42fc-9b8c-92d090dff3c7#acc.g4bQXLwr" target="_blank" class="btn">View Certificate</a>
-</div>
-
-<div class="card">
-<h3>Google Measurement</h3>
-<p>Analytics & Measurement Certified</p>
-<a href="https://skillshop.credential.net/ac65abe8-2180-480b-b2d2-0b4ffac09e2b#acc.jbGw6avU" target="_blank" class="btn">View Certificate</a>
-</div>
-
-</div>
 </div>
 </section>
-</section><section class='dark'><div class='container'><h2>🎁 Free Account Audit Offer</h2><p class='sub'>Get a FREE Google Ads / Meta Ads Audit with wasted spend analysis, conversion tracking review and scaling roadmap.</p><br><div style='text-align:center'><a href='https://wa.me/918076509729' class='btn'>Claim Free Audit</a></div></div></section>
-<section style="background:#f8fafc; padding:90px 20px;">
-  <div class="container">
-    <h2 style="text-align:center; color:#111827; margin-bottom:40px;">
-      Client Reviews
-    </h2>
 
-    <div class="grid">
+<!-- SOLUTION -->
+<section class="dark">
+<div class="container">
+<h2>What We Do</h2>
 
-      <div class="card">
-        <h3>⭐⭐⭐ Rohit Sharma</h3>
-        <p>CPA reduced by 38% in first month. Great reporting & communication.</p>
-      </div>
+<div class="grid">
+<div class="card">✔ Data-driven ad strategy</div>
+<div class="card">✔ Conversion tracking setup</div>
+<div class="card">✔ Weekly optimization</div>
+<div class="card">✔ Scaling profitable campaigns</div>
+</div>
 
-      <div class="card">
-        <h3>⭐⭐⭐ Aman Verma</h3>
-        <p>Finally found someone who understands scaling, not just running ads.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐⭐⭐ Neha Gupta</h3>
-        <p>Tracking fixed, ROAS improved, and leads became consistent.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐ Karan Mehta</h3>
-        <p>Lead quality improved and CPL dropped significantly.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐⭐ Priya Arora</h3>
-        <p>Transparent reporting and excellent campaign execution.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐⭐⭐⭐ Sandeep Jain</h3>
-        <p>Best Google Ads expert I’ve worked with so far.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐⭐⭐ Ritu Kapoor</h3>
-        <p>Our Shopify sales became more stable month after month.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐⭐⭐⭐ Deepak Singh</h3>
-        <p>Very strategic approach with actual business understanding.</p>
-      </div>
-
-      <div class="card">
-        <h3>⭐⭐⭐⭐ Mohit Bansal</h3>
-        <p>Scaling campaigns became predictable after working together.</p>
-      </div>
-
-    </div>
-  </div>
+</div>
 </section>
-<section><div class='container'><h2>Ready To Grow?</h2><p class='sub'>Talk to an experienced media buyer and build a profitable acquisition system.</p><br><div style='text-align:center'><a href='mailto:Manishpanchal261@gmail.com' class='btn'>Email Us</a> <a href='https://wa.me/918076509729' class='btn'>WhatsApp</a></div><footer>
-  <br>
-  <div class="container">
-    <h3>ScaleWithManish.com</h3>
-    <p>Performance Marketing & Media Buying Services</p>
 
-    <p>Email: Manishpanchal261@gmail.com | WhatsApp: +91 8076509729</p>
-    <p>Delhi, India</p>
+<!-- OFFER -->
+<section style="background:#f8fafc;">
+<div class="container">
+<h2>🎁 Free Ads Audit Includes</h2>
 
-    <p>
-      <a href="https://privary-policy-pi.vercel.app/" target="_self">Privacy Policy</a> |
-      <a href="https://privary-policy-xpmn.vercel.app/" target="_self">Terms of Use</a> |
-      <a href="#cookie">Cookie Policy</a>
+<div class="grid">
+<div class="card">Campaign Audit</div>
+<div class="card">Tracking Check</div>
+<div class="card">Wasted Spend Report</div>
+<div class="card">Growth Plan</div>
+</div>
 
-    <p style="font-size:14px; opacity:0.8;">
-      Results may vary depending on business model, budget, industry, and market conditions.
-      No specific earnings or revenue guarantees are implied.
-    </p>
+<div style="text-align:center;margin-top:20px;">
+<a href="https://wa.me/918076509729" class="btn">Claim Free Audit</a>
+</div>
 
-    <p>© 2026 ScaleWithManish.com. All Rights Reserved.</p>
-  </div></br>
-</footer></a></p></div><a href='https://wa.me/918076509729' class='wa'>WhatsApp</a>
-</body></html>
+</div>
+</section>
+
+<!-- PROOF -->
+<section>
+<div class="container">
+<h2>Results</h2>
+
+<img src="https://i.ibb.co/1GHzyjfg/cs.png" style="border-radius:12px">
+
+<p style="text-align:center;margin-top:10px;font-weight:600;">
+₹1.43M Revenue | 2.8x ROAS | 12K+ Conversions
+</p>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section style="background:#f8fafc;">
+<div class="container">
+<h2>Client Results</h2>
+
+<div class="grid">
+<div class="card">“CPA ↓ 38% in 30 days”</div>
+<div class="card">“ROAS doubled after scaling”</div>
+<div class="card">“Consistent leads every week”</div>
+</div>
+
+</div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+<div class="container">
+
+<h2>Ready To Scale?</h2>
+
+<div style="text-align:center;margin-top:20px;">
+<a href="https://wa.me/918076509729" class="btn">Book Free Strategy Call</a>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="container">
+
+<h3>ScaleWithManish.com</h3>
+<p>Email: Manishpanchal261@gmail.com</p>
+
+<p>
+<a href="https://privary-policy-pi.vercel.app/">Privacy</a> |
+<a href="https://privary-policy-xpmn.vercel.app/">Terms</a>
+</p>
+
+<p style="font-size:13px;margin-top:10px;">
+No guaranteed results. Performance varies.
+</p>
+
+</div>
+</footer>
+
+<a href="https://wa.me/918076509729" class="wa">WhatsApp</a>
+
+</body>
+</html>
