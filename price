@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16a085">
+  <meta name="description" content="Explore performance marketing plans from ScaleWithManish for Google Ads, Meta Ads, conversion tracking and growth strategy.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://pricing-phi-seven.vercel.app/">
+  <title>Pricing | ScaleWithManish</title>
+
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://i.ibb.co">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W5DQG8HK');
+  </script>
+
+  <style>
+    :root{
+      --green:#16a085;
+      --green-dark:#0f7f6f;
+      --green-light:#eaf7f2;
+      --orange:#f39c34;
+      --yellow:#f6c445;
+      --ink:#17212b;
+      --muted:#5f6b76;
+      --line:#e5e7eb;
+      --soft:#f7fbf9;
+      --cream:#fff8e8;
+      --dark:#17212b;
+      --dark-card:#22313d;
+      --white:#fff;
+      --radius:18px;
+      --shadow:0 16px 45px rgba(15,23,42,.08);
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Manrope,Arial,sans-serif;background:#fff;color:var(--ink);line-height:1.65}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+    .container{width:min(100% - 32px,var(--max));margin-inline:auto}
+    .section{padding:78px 0}
+    .center{text-align:center}
+
+    .top-offer{
+      background:linear-gradient(90deg,var(--green),#20b879);
+      color:#fff;
+      text-align:center;
+      padding:9px 16px;
+      font-size:14px;
+      font-weight:800;
+    }
+    .top-offer a{text-decoration:underline;text-underline-offset:3px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(229,231,235,.9);
+    }
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .logo{width:154px}
+    .nav-actions{display:flex;align-items:center;gap:12px}
+    .back-link{text-decoration:none;font-weight:700;color:#44515d}
+    .back-link:hover{color:var(--green)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      padding:12px 22px;
+      border:1px solid transparent;
+      border-radius:11px;
+      background:linear-gradient(135deg,var(--green),#20b879);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      transition:.22s ease;
+      box-shadow:0 8px 22px rgba(22,160,133,.18);
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 13px 28px rgba(22,160,133,.26)}
+    .btn-outline{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:none}
+    .btn-outline:hover{border-color:var(--green);color:var(--green)}
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:100px 0 78px;
+      text-align:center;
+      background:linear-gradient(135deg,#f7fbf9 0%,#fff8e8 58%,#fff3df 100%);
+    }
+    .hero::before,.hero::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      filter:blur(6px);
+      opacity:.45;
+      pointer-events:none;
+    }
+    .hero::before{width:280px;height:280px;background:#d7f3e8;top:-120px;left:-80px}
+    .hero::after{width:240px;height:240px;background:#ffe6b9;right:-70px;bottom:-110px}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 13px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid #dbeee6;
+      color:var(--green-dark);
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 6px 20px rgba(22,160,133,.08);
+    }
+    h1{max-width:860px;margin:22px auto 15px;font-size:clamp(38px,5.4vw,64px);line-height:1.04;letter-spacing:-.04em}
+    h1 span{color:var(--green)}
+    .hero p{max-width:700px;margin:0 auto;color:var(--muted);font-size:clamp(17px,2vw,20px)}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .trust-row{display:flex;justify-content:center;gap:10px 22px;flex-wrap:wrap;margin-top:30px;font-size:14px;font-weight:700;color:#53616c}
+
+    h2{margin:0;text-align:center;font-size:clamp(30px,3.3vw,42px);line-height:1.15;letter-spacing:-.03em}
+    h2::after{content:"";display:block;width:64px;height:4px;margin:14px auto 0;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--yellow),var(--orange))}
+    .section-intro{max-width:720px;margin:16px auto 0;text-align:center;color:var(--muted)}
+
+    .pricing-section{background:#fff}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:44px;align-items:stretch}
+    .pricing-card{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      padding:30px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:#fff;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      transition:.22s ease;
+    }
+    .pricing-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--green),var(--yellow),var(--orange))}
+    .pricing-card:hover{transform:translateY(-5px);box-shadow:0 22px 55px rgba(15,23,42,.12)}
+    .pricing-card.popular{border:2px solid var(--green);transform:translateY(-8px);background:linear-gradient(180deg,#fff,#f8fffc)}
+    .pricing-card.popular:hover{transform:translateY(-12px)}
+    .badge{align-self:flex-start;padding:6px 11px;border-radius:999px;background:linear-gradient(135deg,var(--green),#20b879);color:#fff;font-size:12px;font-weight:900;letter-spacing:.02em;margin-bottom:16px}
+    .plan-name{font-size:22px;margin:0}
+    .plan-for{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .price{display:flex;align-items:flex-end;gap:5px;margin:24px 0 20px}
+    .price strong{font-size:42px;line-height:1;font-weight:800;letter-spacing:-.04em}
+    .price span{color:var(--muted);font-size:14px;margin-bottom:5px}
+    .feature-list{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:13px;text-align:left}
+    .feature-list li{display:flex;gap:10px;align-items:flex-start;color:#334155}
+    .feature-list li::before{content:"✓";flex:0 0 23px;width:23px;height:23px;border-radius:50%;display:grid;place-items:center;background:var(--green-light);color:var(--green-dark);font-weight:900;font-size:13px}
+    .pricing-card .btn{width:100%;margin-top:auto}
+    .pricing-note{text-align:center;color:#6b7280;font-size:13px;margin-top:22px}
+
+    .why{background:var(--dark);color:#fff}
+    .why h2::after{background:linear-gradient(90deg,var(--yellow),var(--orange))}
+    .why .section-intro{color:#cbd5e1}
+    .why-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:38px}
+    .why-card{position:relative;background:var(--dark-card);border:1px solid #334155;border-radius:15px;padding:24px;text-align:center;overflow:hidden}
+    .why-card::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--green),var(--yellow),var(--orange))}
+    .why-icon{width:46px;height:46px;display:grid;place-items:center;margin:0 auto 14px;border-radius:13px;background:rgba(255,255,255,.08);font-size:22px}
+    .why-card h3{margin:0 0 8px;font-size:17px}
+    .why-card p{margin:0;color:#cbd5e1;font-size:14px}
+
+    .process{background:var(--soft)}
+    .process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:38px}
+    .process-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:26px;box-shadow:0 10px 30px rgba(15,23,42,.05)}
+    .step{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--green),#20b879);color:#fff;font-weight:900;margin-bottom:15px}
+    .process-card h3{margin:0 0 8px}
+    .process-card p{margin:0;color:var(--muted)}
+
+    .cta-wrap{padding:78px 0}
+    .cta{
+      position:relative;
+      overflow:hidden;
+      padding:68px 24px;
+      border-radius:24px;
+      text-align:center;
+      background:linear-gradient(135deg,#17212b,#22313d);
+      color:#fff;
+      box-shadow:0 24px 70px rgba(15,23,42,.18);
+    }
+    .cta::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(22,160,133,.22);top:-130px;left:-70px}
+    .cta::after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(243,156,52,.14);right:-90px;bottom:-120px}
+    .cta h2,.cta p,.cta-points,.cta .btn{position:relative;z-index:1}
+    .cta h2::after{background:linear-gradient(90deg,var(--yellow),var(--orange))}
+    .cta p{max-width:700px;margin:17px auto 0;color:#cbd5e1}
+    .cta-points{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:23px}
+    .cta-points span{padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.09);font-size:13px;font-weight:700}
+    .cta .btn{margin-top:28px;background:linear-gradient(135deg,var(--green),#20b879)}
+
+    footer{background:var(--dark);color:#cbd5e1;padding:48px 0;text-align:center}
+    .footer-logo{width:150px;margin:0 auto 18px;filter:brightness(0) invert(1);opacity:.95}
+    .footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:16px 0}
+    .footer-links a{text-decoration:none;color:#fff;font-weight:700;font-size:14px}
+    .payment{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .pay{padding:8px 13px;border-radius:999px;background:#22313d;border:1px solid #334155;font-size:12px;font-weight:800;color:#fff}
+    .secure{margin-top:18px;font-size:13px}
+    .disclaimer{margin-top:18px;font-size:12px;color:#94a3b8}
+
+    @media(max-width:900px){
+      .pricing-grid{grid-template-columns:1fr;max-width:620px;margin-inline:auto}
+      .pricing-card.popular{transform:none}
+      .pricing-card.popular:hover{transform:translateY(-5px)}
+      .why-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .process-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      .section{padding:58px 0}
+      .hero{padding:72px 0 60px}
+      .nav{min-height:68px}
+      .logo{width:132px}
+      .back-link{display:none}
+      .nav-actions .btn{min-height:43px;padding:10px 14px;font-size:13px}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .why-grid{grid-template-columns:1fr}
+      .pricing-card{padding:25px}
+      .cta{padding:52px 20px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5DQG8HK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="top-offer">🎁 Free Ads Audit worth ₹5,000 — <a href="https://wa.me/918076509729?text=Hi%20Manish%2C%20I%20want%20to%20claim%20the%20free%20ads%20audit." data-event="free_audit_click">Claim Now</a></div>
+
+  <header>
+    <div class="container nav">
+      <a href="https://scalewithmanish.com/" aria-label="ScaleWithManish home">
+        <img class="logo" src="https://i.ibb.co/03QzXmM/LOGO-2.png" alt="ScaleWithManish logo" width="154" height="55">
+      </a>
+      <div class="nav-actions">
+        <a class="back-link" href="https://scalewithmanish.com/">← Back to website</a>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/viewform" target="_blank" rel="noopener" data-event="book_call_click">Book Free Call</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Performance Marketing Plans</div>
+        <h1>Choose the right plan to <span>scale profitably</span></h1>
+        <p>Clear, performance-driven pricing for brands that want better tracking, stronger campaigns and smarter growth decisions.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#plans">View Plans</a>
+          <a class="btn btn-outline" href="https://wa.me/918076509729?text=Hi%20Manish%2C%20I%20need%20help%20choosing%20the%20right%20plan." data-event="pricing_whatsapp_click">Help Me Choose</a>
+        </div>
+        <div class="trust-row">
+          <span>✓ Transparent pricing</span>
+          <span>✓ No long-term contract</span>
+          <span>✓ Clear monthly deliverables</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="plans">
+      <div class="container">
+        <h2>Growth plans for every stage</h2>
+        <p class="section-intro">Choose the plan that matches your current advertising needs. Custom scopes are available for businesses with more complex requirements.</p>
+
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <h3 class="plan-name">Starter</h3>
+            <p class="plan-for">Best for businesses starting with paid ads</p>
+            <div class="price"><strong>₹15,000</strong><span>/month</span></div>
+            <ul class="feature-list">
+              <li>Management for 1 advertising platform</li>
+              <li>Campaign setup and optimisation</li>
+              <li>Weekly performance checks</li>
+              <li>Monthly performance report</li>
+              <li>Basic strategy support</li>
+            </ul>
+            <a class="btn" href="https://wa.me/918076509729?text=Hi%20Manish%2C%20I%20am%20interested%20in%20the%20Starter%20plan." data-event="starter_plan_click">Get Started</a>
+          </article>
+
+          <article class="pricing-card popular">
+            <div class="badge">MOST POPULAR</div>
+            <h3 class="plan-name">Growth</h3>
+            <p class="plan-for">Best for brands ready to scale across channels</p>
+            <div class="price"><strong>₹25,000</strong><span>/month</span></div>
+            <ul class="feature-list">
+              <li>Google Ads and Meta Ads management</li>
+              <li>Conversion tracking review and setup</li>
+              <li>Weekly optimisation and testing</li>
+              <li>Campaign strategy support</li>
+              <li>Monthly reporting and insights</li>
+            </ul>
+            <a class="btn" href="https://wa.me/918076509729?text=Hi%20Manish%2C%20I%20am%20interested%20in%20the%20Growth%20plan." data-event="growth_plan_click">Book a Call</a>
+          </article>
+
+          <article class="pricing-card">
+            <h3 class="plan-name">Premium</h3>
+            <p class="plan-for">For businesses pursuing aggressive growth</p>
+            <div class="price"><strong>₹40,000</strong><span>/month</span></div>
+            <ul class="feature-list">
+              <li>Full-funnel advertising strategy</li>
+              <li>Advanced scaling and budget planning</li>
+              <li>Cross-platform campaign management</li>
+              <li>Priority strategy support</li>
+              <li>Deeper reporting and growth insights</li>
+            </ul>
+            <a class="btn" href="https://wa.me/918076509729?text=Hi%20Manish%2C%20I%20am%20interested%20in%20the%20Premium%20plan." data-event="premium_plan_click">Scale Now</a>
+          </article>
+        </div>
+        <p class="pricing-note">Advertising spend is separate from the monthly management fee. Taxes may apply where required.</p>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="container">
+        <h2>Why businesses choose us</h2>
+        <p class="section-intro">A structured approach focused on measurable improvements rather than vanity metrics.</p>
+        <div class="why-grid">
+          <article class="why-card"><div class="why-icon">📊</div><h3>Data-led decisions</h3><p>Campaign changes are based on performance signals and business goals.</p></article>
+          <article class="why-card"><div class="why-icon">🎯</div><h3>ROI-focused strategy</h3><p>We focus on quality leads, profitable sales and sustainable growth.</p></article>
+          <article class="why-card"><div class="why-icon">📈</div><h3>Structured scaling</h3><p>Budgets and campaigns are scaled with testing, tracking and control.</p></article>
+          <article class="why-card"><div class="why-icon">🔎</div><h3>Transparent reporting</h3><p>You receive clear updates on performance, actions and next steps.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process">
+      <div class="container">
+        <h2>How getting started works</h2>
+        <p class="section-intro">A simple onboarding process designed to quickly understand your business and advertising goals.</p>
+        <div class="process-grid">
+          <article class="process-card"><div class="step">1</div><h3>Choose your plan</h3><p>Select a plan or contact us for help matching the right scope to your business.</p></article>
+          <article class="process-card"><div class="step">2</div><h3>Strategy call</h3><p>We review your current campaigns, objectives, tracking and growth opportunities.</p></article>
+          <article class="process-card"><div class="step">3</div><h3>Launch and optimise</h3><p>After onboarding, campaigns are structured, monitored and improved over time.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-wrap">
+      <div class="container">
+        <div class="cta">
+          <h2>Ready to scale your business profitably?</h2>
+          <p>Get a clear, data-driven growth plan before committing to a package. We will help you understand which plan best fits your current goals.</p>
+          <div class="cta-points">
+            <span>✓ Free strategy call</span>
+            <span>✓ No long-term contract</span>
+            <span>✓ Performance-focused approach</span>
+          </div>
+          <a class="btn" href="https://wa.me/918076509729?text=Hi%20Manish%2C%20I%20want%20to%20book%20a%20free%20strategy%20call." data-event="final_cta_click">Book Free Strategy Call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img class="footer-logo" src="https://i.ibb.co/03QzXmM/LOGO-2.png" alt="ScaleWithManish logo" width="150" height="54">
+      <p>Performance marketing services for growing businesses.</p>
+      <div class="footer-links">
+        <a href="https://scalewithmanish.com/">Home</a>
+        <a href="https://privary-policy-pi.vercel.app/">Privacy Policy</a>
+        <a href="https://privary-policy-xpmn.vercel.app/">Terms</a>
+        <a href="mailto:Manishpanchal261@gmail.com">Contact</a>
+      </div>
+      <div class="payment">
+        <span class="pay">VISA</span><span class="pay">MASTERCARD</span><span class="pay">WISE</span><span class="pay">GPAY</span><span class="pay">PAYTM</span>
+      </div>
+      <div class="secure">🔒 Secure payment options available</div>
+      <p class="disclaimer">No guaranteed results. Advertising performance varies by business, market, offer, budget and execution.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('click', function(event){
+      var link = event.target.closest('[data-event]');
+      if (!link) return;
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: link.getAttribute('data-event'),
+        link_url: link.href || '',
+        page_type: 'pricing'
+      });
+    });
+  </script>
+</body>
+</html>
