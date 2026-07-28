@@ -142,6 +142,15 @@
     .hero-proof{margin-top:12px;font-weight:800}
     .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
 
+
+    .platform-trust{margin-top:38px;padding-top:24px;border-top:1px solid rgba(15,23,42,.09)}
+    .platform-trust-title{margin:0 0 16px;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#64748b}
+    .platform-logos{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:980px;margin:0 auto}
+    .platform-logo{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:10px 15px;background:rgba(255,255,255,.72);border:1px solid rgba(15,23,42,.09);border-radius:12px;color:#263445;font-size:14px;font-weight:800;box-shadow:0 6px 18px rgba(15,23,42,.05);backdrop-filter:blur(8px);transition:.2s ease}
+    .platform-logo i{font-size:21px}
+    .platform-logo:hover{transform:translateY(-2px);background:#fff;box-shadow:0 10px 24px rgba(15,23,42,.10)}
+    .platform-logo.google i{color:#4285f4}.platform-logo.meta i{color:#0866ff}.platform-logo.tiktok i{color:#111827}.platform-logo.linkedin i{color:#0a66c2}.platform-logo.snapchat i{color:#f2c800}.platform-logo.pinterest i{color:#e60023}.platform-logo.quora i{color:#b92b27}
+
     h2{margin:0 0 14px;text-align:center;font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em}
     h3{margin:0 0 8px}
     .section-intro{max-width:740px;margin:0 auto 34px;text-align:center}
@@ -236,6 +245,9 @@
       .grid{grid-template-columns:1fr}
       .hero-actions{flex-direction:column}
       .hero-actions .btn{width:100%}
+      .platform-logos{gap:9px}
+      .platform-logo{padding:9px 12px;font-size:13px}
+      .platform-logo i{font-size:18px}
       .popup-left{padding:28px 22px}
       .form-shell iframe{height:1320px}
       .wa{width:52px;height:52px;padding:0;justify-content:center;font-size:0}
@@ -297,6 +309,19 @@
         <div class="hero-actions">
           <a href="#audit-form" class="btn track-lead">Apply for Free Audit</a>
           <a href="https://pricing-phi-seven.vercel.app/" class="btn btn-blue" target="_blank" rel="noopener">View Pricing</a>
+        </div>
+
+        <div class="platform-trust" aria-label="Advertising platforms we manage">
+          <p class="platform-trust-title">Advertising Platforms We Manage</p>
+          <div class="platform-logos">
+            <span class="platform-logo google"><i class="fa-brands fa-google" aria-hidden="true"></i>Google Ads</span>
+            <span class="platform-logo meta"><i class="fa-brands fa-meta" aria-hidden="true"></i>Meta Ads</span>
+            <span class="platform-logo tiktok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i>TikTok Ads</span>
+            <span class="platform-logo linkedin"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>LinkedIn Ads</span>
+            <span class="platform-logo snapchat"><i class="fa-brands fa-snapchat" aria-hidden="true"></i>Snapchat Ads</span>
+            <span class="platform-logo pinterest"><i class="fa-brands fa-pinterest-p" aria-hidden="true"></i>Pinterest Ads</span>
+            <span class="platform-logo quora"><i class="fa-brands fa-quora" aria-hidden="true"></i>Quora Ads</span>
+          </div>
         </div>
       </div>
     </section>
