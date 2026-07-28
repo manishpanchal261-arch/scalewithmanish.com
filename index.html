@@ -1,841 +1,475 @@
-<!DOCTYPE html>
-<html lang='en'>
+<!doctype html>
+<html lang="en-IN">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="Apply for a free Google Ads growth audit from ScaleWithManish. Get campaign, tracking, wasted-spend and growth recommendations.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://scalewithmanish.com/">
+  <title>Free Google Ads Audit | ScaleWithManish</title>
 
-<!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116519114"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-18116519114');
-</script>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://i.ibb.co">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<!-- GTM -->
-<script>
-(function(w,d,s,l,i){
-w[l]=w[l]||[];
-w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
-var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
-j.async=true;
-j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W5DQG8HK');
-</script>
+  <!-- Google Tag Manager: keep tracking centrally inside GTM. -->
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;
+      j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W5DQG8HK');
+  </script>
 
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<title>ScaleWithManish.com</title>
+  <style>
+    :root{
+      --blue:#2563eb;
+      --blue-dark:#1d4ed8;
+      --ink:#111827;
+      --muted:#4b5563;
+      --line:#e5e7eb;
+      --soft:#f8fafc;
+      --dark:#0f172a;
+      --card-dark:#1f2937;
+      --green:#25d366;
+      --radius:14px;
+      --shadow:0 10px 30px rgba(15,23,42,.08);
+      --max:1120px;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,Arial;background:#fff;color:#111827;line-height:1.7;padding-top:60px}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(100% - 32px,var(--max));margin-inline:auto}
+    .section{padding:72px 0}
+    .section-soft{background:var(--soft)}
+    .section-dark{background:var(--dark);color:#fff}
+    .center{text-align:center}
+    .muted{color:var(--muted)}
+    .section-dark .muted{color:#cbd5e1}
 
-header{
-position:sticky;top:0;background:#fff;padding:15px 20px;
-display:flex;justify-content:space-between;align-items:center;
-box-shadow:0 4px 18px rgba(0,0,0,.06);z-index:999;
-}
+    .top-offer{
+      position:relative;
+      background:var(--blue);
+      color:#fff;
+      text-align:center;
+      padding:9px 16px;
+      font-weight:700;
+      font-size:14px;
+    }
+    .top-offer a{text-decoration:underline;text-underline-offset:3px}
 
-.container{max-width:1100px;margin:auto;padding:0 15px}
-section{padding:70px 15px}
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(229,231,235,.9);
+    }
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand-wrap{display:flex;align-items:center;gap:20px}
+    .logo{width:150px}
+    .socials{display:flex;gap:14px;font-size:19px}
+    .socials a{color:#334155;text-decoration:none}
+    .socials a:hover{color:var(--blue)}
 
-.btn{
-background:#111827;color:#fff;padding:14px 24px;
-border-radius:8px;text-decoration:none;font-weight:700;
-display:inline-block;text-align:center;
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:48px;
+      padding:12px 22px;
+      border-radius:10px;
+      border:1px solid transparent;
+      background:var(--ink);
+      color:#fff;
+      text-decoration:none;
+      font-weight:800;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(15,23,42,.15)}
+    .btn-blue{background:var(--blue)}
+    .btn-blue:hover{background:var(--blue-dark)}
+    .btn-outline{background:#fff;color:var(--ink);border-color:var(--line)}
 
-.hero{
-background:linear-gradient(135deg,#f8fafc,#eef2ff);
-text-align:center;padding:100px 15px;
-}
+    .hero{
+      padding:96px 0 88px;
+      background:linear-gradient(135deg,#f8fafc 0%,#eef2ff 100%);
+      text-align:center;
+    }
+    .hero h1{max-width:850px;margin:0 auto 18px;font-size:clamp(36px,5vw,62px);line-height:1.05;letter-spacing:-.03em}
+    .hero .sub{max-width:760px;margin:0 auto;font-size:clamp(17px,2vw,21px);color:var(--muted)}
+    .hero-proof{margin-top:12px;font-weight:800}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
 
-h1{font-size:42px;margin-bottom:15px}
-h2{text-align:center;font-size:32px;margin-bottom:25px}
-.sub{font-size:18px;color:#4b5563}
+    h2{margin:0 0 14px;text-align:center;font-size:clamp(28px,3.2vw,40px);line-height:1.15;letter-spacing:-.02em}
+    h3{margin:0 0 8px}
+    .section-intro{max-width:740px;margin:0 auto 34px;text-align:center}
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;margin-top:25px;
-}
+    .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px}
+    .card{background:#fff;border:1px solid var(--line);padding:24px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .section-dark .card{background:var(--card-dark);border-color:#334155;color:#fff}
+    .card-icon{font-size:22px;margin-bottom:12px}
 
-.card{
-background:#fff;padding:22px;border-radius:12px;
-box-shadow:0 8px 20px rgba(0,0,0,.05);
-}
+    .proof-stack{max-width:920px;margin:34px auto 0;display:grid;gap:46px}
+    .proof-item{text-align:center}
+    .proof-image{border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);margin-top:16px}
+    .proof-caption{margin-top:12px;font-weight:800}
+    .disclaimer{font-size:13px;color:#6b7280;margin-top:10px}
 
-.dark{background:#111827;color:#fff}
-.dark .card{background:#1f2937;color:#fff}
+    .faq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
 
-footer{
-background:#0f172a;color:#cbd5e1;
-padding:40px 20px;text-align:center;
-}
+    .form-shell{max-width:850px;margin:30px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .form-shell iframe{display:block;width:100%;height:1180px;border:0}
 
-.wa{
-position:fixed;bottom:15px;right:15px;
-background:#25D366;color:#fff;
-padding:12px 16px;border-radius:40px;
-text-decoration:none;
-}
+    footer{background:var(--dark);color:#cbd5e1;padding:44px 0;text-align:center}
+    footer a{color:#fff}
+    footer p{margin:7px 0}
 
-/* TOP BAR */
-.top-offer{
-position:fixed;top:0;width:100%;
-background:#2563eb;color:#fff;
-text-align:center;padding:10px;font-weight:600;
-z-index:9999;
-}
+    .wa{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:1500;
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      background:var(--green);
+      color:#fff;
+      text-decoration:none;
+      padding:12px 17px;
+      border-radius:999px;
+      font-weight:800;
+      box-shadow:0 10px 24px rgba(0,0,0,.18);
+    }
 
-/* MOBILE */
-@media(max-width:768px){
-h1{font-size:28px}
-h2{font-size:24px}
-.btn{width:100%}
-.grid{grid-template-columns:1fr}
-}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"ScaleWithManish",
-  "url":"https://scalewithmanish.com",
-  "sameAs":[
-    "https://www.instagram.com/scalewithmanish2026/",
-    "https://www.facebook.com/profile.php?id=61591232161156",
-    "https://www.youtube.com/@manishpanchal-z1w",
-    "https://www.linkedin.com/in/manish-scales-ads/",
-    "https://in.pinterest.com/manishpanchal261/"
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Manish Panchal",
-  "url": "https://scalewithmanish.com",
-  "sameAs": [
-    "https://www.instagram.com/scalewithmanish2026/",
-    "https://www.facebook.com/profile.php?id=61591232161156",
-    "https://www.linkedin.com/in/manish-scales-ads/",
-    "https://www.youtube.com/@manishpanchal-z1w",
-    "https://in.pinterest.com/manishpanchal261/"
-  ]
-}
-</script>
+    .popup-overlay{
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+      background:rgba(15,23,42,.64);
+    }
+    .popup-overlay.is-open{display:flex}
+    .popup-box{
+      position:relative;
+      width:min(900px,100%);
+      max-height:92vh;
+      overflow:auto;
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 24px 70px rgba(0,0,0,.28);
+    }
+    .popup-content{display:grid;grid-template-columns:1.05fr .95fr}
+    .popup-left,.popup-right{padding:38px}
+    .popup-right{background:#f6f8ff;display:flex;flex-direction:column;justify-content:center}
+    .popup-close{position:absolute;top:12px;right:14px;width:40px;height:40px;border:0;border-radius:50%;background:#fff;font-size:28px;cursor:pointer;z-index:2}
+    .popup-badge{display:inline-block;background:#fde047;padding:7px 14px;border-radius:999px;font-weight:900;font-size:13px}
+    .popup-title{font-size:clamp(32px,4vw,48px);line-height:1.02;margin:18px 0}
+    .popup-title span{color:var(--blue)}
+    .popup-list{list-style:none;padding:0;margin:18px 0}
+    .popup-list li{margin:9px 0}
+    .popup-skip{display:block;width:100%;margin-top:12px;border:0;background:none;color:#64748b;text-decoration:underline;cursor:pointer}
+    .dashboard{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .metric-card{background:#fff;border:1px solid #dbeafe;border-radius:12px;padding:16px;text-align:center;box-shadow:0 7px 20px rgba(37,99,235,.08)}
+    .metric-card strong{display:block;color:#059669;font-size:22px}
+    .trusted{text-align:center;margin-top:20px;font-weight:700}
+    .bottom-strip{margin-top:16px;padding:12px;border-radius:12px;background:#eaf1ff;text-align:center;font-size:13px}
+
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .faq-grid{grid-template-columns:1fr}
+      .popup-content{grid-template-columns:1fr}
+      .popup-right{display:none}
+    }
+    @media (max-width:700px){
+      .section{padding:56px 0}
+      .hero{padding:72px 0 64px}
+      .nav{min-height:66px}
+      .socials{display:none}
+      .logo{width:132px}
+      .nav>.btn{padding:10px 14px;min-height:44px;font-size:14px}
+      .grid{grid-template-columns:1fr}
+      .hero-actions{flex-direction:column}
+      .hero-actions .btn{width:100%}
+      .popup-left{padding:28px 22px}
+      .form-shell iframe{height:1320px}
+      .wa{width:52px;height:52px;padding:0;justify-content:center;font-size:0}
+      .wa i{font-size:24px}
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"ScaleWithManish",
+    "url":"https://scalewithmanish.com/",
+    "email":"mailto:Manishpanchal261@gmail.com",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Kh. No. 56/3, Kishan Colony, Prahlad Pur Bangar",
+      "addressLocality":"Delhi",
+      "postalCode":"110042",
+      "addressCountry":"IN"
+    },
+    "sameAs":[
+      "https://www.instagram.com/scalewithmanish2026/",
+      "https://www.facebook.com/profile.php?id=61591232161156",
+      "https://www.youtube.com/@manishpanchal-z1w",
+      "https://www.linkedin.com/in/manish-scales-ads/",
+      "https://in.pinterest.com/manishpanchal261/"
+    ]
+  }
+  </script>
 </head>
-
 <body>
-
-<!-- GTM -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5DQG8HK"
-height="0" width="0" style="display:none"></iframe></noscript>
-
-<!-- TOP BAR -->
-<div class="top-offer">
-🎁 Free Ads Audit (₹5,000 Value) →
-<a href="https://wa.me/918076509729" style="color:#fff;text-decoration:underline;">Claim Now</a>
-</div>
-
-<!-- HEADER -->
-<header>
-
-<div>
-  <a href="/">
-    <img src="https://i.ibb.co/03QzXmM/LOGO-2.png" style="width:160px;">
-  </a>
-
- <div style="display:flex;align-items:center;gap:15px;font-size:20px;">
-
-<a href="https://www.instagram.com/scalewithmanish2026/" target="_blank">
-<i class="fa-brands fa-instagram"></i>
-</a>
-
-<a href="https://www.facebook.com/profile.php?id=61591232161156" target="_blank">
-<i class="fa-brands fa-facebook"></i>
-</a>
-
-<a href="https://www.youtube.com/@manishpanchal-z1w" target="_blank">
-<i class="fa-brands fa-youtube"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/manish-scales-ads/" target="_blank">
-<i class="fa-brands fa-linkedin"></i>
-</a>
-
-<a href="https://in.pinterest.com/manishpanchal261/" target="_blank">
-<i class="fa-brands fa-pinterest"></i>
-</a>
-
-</div>
-</div>
-
-<a href="https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/viewform?usp=header" class="btn">
-  Book Free Call
-</a>
-
-</header>
-
-<!-- HERO -->
-<section class="hero">
-<div class="container">
-
-<h1>Stop Wasting Money on Ads That Don’t Convert</h1>
-
-<p class="sub">
-Generate consistent leads & sales with performance-driven Google Ads strategies.
-</p>
-
-<p style="margin-top:10px;font-weight:600;">
-₹25L+ Ad Spend Managed | Trusted by Growing Brands
-</p>
-
-<div style="margin-top:25px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
-<a href="#audit-form" class="btn">
-Apply For Free Audit
-</a>
-<a href="https://pricing-phi-seven.vercel.app/" class="btn" style="background:#2563eb;">View Pricing</a>
-</div>
-
-</div>
-</section>
-
-<!-- PROBLEM -->
-<section>
-<div class="container">
-<h2>Why Most Ads Fail</h2>
-
-<div class="grid">
-<div class="card">❌ Wrong targeting = wasted budget</div>
-<div class="card">❌ No tracking = no data</div>
-<div class="card">❌ Bad creatives = low conversions</div>
-<div class="card">❌ No scaling strategy</div>
-</div>
-
-</div>
-</section>
-
-<!-- SOLUTION -->
-<section class="dark">
-<div class="container">
-<h2>What We Do Differently</h2>
-
-<div class="grid">
-<div class="card">✔ High-converting campaign structure</div>
-<div class="card">✔ Accurate tracking & optimization</div>
-<div class="card">✔ Intent-based targeting</div>
-<div class="card">✔ Scaling profitable campaigns</div>
-</div>
-
-</div>
-</section>
-
-<!-- OFFER -->
-<section style="background:#f8fafc;">
-<div class="container">
-<h2>🎁 Free Google Ads Audit Includes</h2>
-
-<div class="grid">
-<div class="card">Campaign Audit</div>
-<div class="card">Tracking Check</div>
-<div class="card">Wasted Spend Analysis</div>
-<div class="card">Growth Plan</div>
-</div>
-
-<div style="text-align:center;margin-top:20px;">
-<a href="https://wa.me/918076509729" class="btn">Claim Free Audit</a>
-</div>
-
-</div>
-</section>
-
-<!-- PROOF -->
-<section>
-<div class="container">
-
-<h2>Proven Results Across Campaigns</h2>
-
-<p style="text-align:center;max-width:700px;margin:auto;color:#4b5563;">
-From structured scaling to real-time performance dashboards — results backed by real data.
-</p>
-
-<!-- 🔹 DONATI (RAW GA4 PROOF) -->
-<h3 style="text-align:center;margin-top:40px;">Live Campaign Dashboard</h3>
-  
-<div style="text-align:center;">
-<img 
-src="https://i.ibb.co/4wvcRr0K/m-D-ss.png"
-alt="Google Analytics 4 Dashboard"
-style="max-width:100%;border-radius:12px;margin-top:15px;
-box-shadow:0 12px 35px rgba(0,0,0,0.12);">
-
-<p style="text-align:center;margin-top:10px;font-weight:600;">
-Real-time Google Analytics 4 tracking
-</p>
-<div>
-<!-- 🔹 NEUPRIL (CASE STUDY PROOF) -->
-<h3 style="text-align:center;margin-top:50px;">Case Study: Neupril</h3>
-<div style="text-align:center;">
-<img 
-src="https://i.ibb.co/1GHzyjfg/cs.png"
-alt="Neupril Case Study"
-style="max-width:100%;border-radius:12px;margin-top:15px;
-box-shadow:0 12px 35px rgba(0,0,0,0.12);">
-
-<p style="text-align:center;margin-top:10px;font-weight:600;">
-₹1.43M Revenue | 2.8x ROAS | 12K+ Conversions
-</p>
-<div>
-<!-- CTA -->
-<div style="text-align:center;margin-top:25px;">
-<a href="https://wa.me/918076509729" class="btn">
-Get Similar Results
-</a>
-</div>
-
-</div>
-</section>
-
-<!-- REVIEWS -->
-<section style="background:#f8fafc;">
-<div class="container">
-<h2>Client Results</h2>
-
-<div class="grid">
-<div class="card">“CPA ↓ 38% in 30 days”</div>
-<div class="card">“ROAS doubled after scaling”</div>
-<div class="card">“Consistent leads every week”</div>
-</div>
-
-</div>
-</section>
-
-<!-- FAQ -->
-<section>
-<div class="container">
-
-<h2>Frequently Asked Questions</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>What budget is recommended?</h3>
-<p>At least ₹20,000/month for effective testing and scaling.</p>
-</div>
-
-<div class="card">
-<h3>How quickly can results be seen?</h3>
-<p>Initial improvements usually within 2–4 weeks.</p>
-</div>
-
-<div class="card">
-<h3>Do you guarantee results?</h3>
-<p>No unrealistic guarantees — only proven strategies and execution.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-  
-<!-- LEAD FORM -->
-<section id="audit-form" style="background:#f8fafc;">
-<div class="container">
-
-<h2>Apply For A Free Google Ads Growth Audit</h2>
-
-<p style="text-align:center;max-width:700px;margin:auto;color:#4b5563;">
-Complete this short application and we'll review your business before scheduling a strategy call.
-</p>
-
-<div style="max-width:800px;margin:30px auto;">
-
-<iframe
-src="https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/viewform?embedded=true"
-width="100%"
-height="1200"
-frameborder="0"
-marginheight="0"
-marginwidth="0">
-Loading…
-</iframe>
-
-</div>
-
-</div>
-</section>
-<!-- FINAL CTA -->
-<section>
-<div class="container">
-
-<h2>Ready To Scale?</h2>
-
-<div style="text-align:center;margin-top:20px;">
-<a href="#audit-form" class="btn">
-Apply Now
-</a>
-</div>
-
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<div class="container">
-
-<h3>ScaleWithManish.com</h3>
-<p>Email: Manishpanchal261@gmail.com</p>
-<p>Address:Kh.no 56/3 kishan colony pehlad pur banger delhi 110042 </p>
-
-<p>
-<a href="https://privary-policy-pi.vercel.app/">Privacy</a> |
-<a href="https://privary-policy-xpmn.vercel.app/">Terms</a>
-</p>
-
-<p style="font-size:13px;margin-top:10px;">
-No guaranteed results. Performance varies.
-</p>
-
-</div>
-</footer>
-
-<a href="https://wa.me/918076509729" class="wa">WhatsApp</a>
-<!-- Offer Popup Start -->
-<div id="offerPopup" class="popup-overlay">
-
-  <div class="popup-box">
-
-    <button class="close-btn" onclick="closePopup()">×</button>
-
-    <div class="offer-content">
-
-      <div class="left-section">
-
-        <div class="badge">
-          🔥 LIMITED TIME OFFER
-        </div>
-
-        <h1>
-          Stop Wasting<br>
-          Money on <span>Ads.</span>
-        </h1>
-
-        <p>
-          Get a <b>FREE Google Ads & Meta Ads Audit</b>
-          Worth <strong>₹5,000</strong> and discover what's
-          stopping your campaigns from generating more leads & sales.
-        </p>
-
-
-        <ul>
-          <li>✓ Google Ads Audit</li>
-          <li>✓ Meta Ads Review</li>
-          <li>✓ Landing Page Review</li>
-          <li>✓ GA4 & Tracking Check</li>
-          <li>✓ Competitor Analysis</li>
-          <li>✓ 30-Day Growth Plan</li>
-        </ul>
-
-
-        <a href="https://api.whatsapp.com/send/?phone=918076509729&text&type=phone_number&app_absent=0" class="cta-btn">
-          Book My Free Audit →
-        </a>
-
-        <div class="skip">
-          No, thanks. I'll pass
-        </div>
-
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5DQG8HK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="top-offer">🎁 Free Ads Audit (₹5,000 Value) → <a class="track-whatsapp" href="https://wa.me/918076509729?text=Hi%2C%20I%20want%20to%20claim%20the%20free%20ads%20audit." target="_blank" rel="noopener">Claim Now</a></div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand-wrap">
+        <a href="/" aria-label="ScaleWithManish home"><img class="logo" src="https://i.ibb.co/03QzXmM/LOGO-2.png" alt="ScaleWithManish logo" width="160" height="60"></a>
+        <nav class="socials" aria-label="Social links">
+          <a href="https://www.instagram.com/scalewithmanish2026/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61591232161156" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.youtube.com/@manishpanchal-z1w" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/manish-scales-ads/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://in.pinterest.com/manishpanchal261/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        </nav>
       </div>
-
-
-
-      <div class="right-section">
-
-        <div class="dashboard">
-
-          <div class="card">
-            <b>Google Ads</b>
-            <div class="chart">📈</div>
-          </div>
-
-
-          <div class="card">
-            <b>Meta Ads</b>
-            <div class="chart">📊</div>
-          </div>
-
-
-          <div class="metric leads">
-            Leads<br>
-            <strong>↑ 215%</strong>
-          </div>
-
-
-          <div class="metric roas">
-            ROAS<br>
-            <strong>4.6x</strong>
-          </div>
-
-
-          <div class="metric cost">
-            Cost / Lead<br>
-            <strong>↓ 62%</strong>
-          </div>
-
-        </div>
-
-
-        <div class="trusted">
-          ⭐⭐⭐⭐⭐
-          <br>
-          Trusted by <b>200+ business owners</b>
-          <br>
-          across India
-        </div>
-
-
-        <div class="bottom-strip">
-
-          🛡 100% Free Audit
-          |
-          ⏱ 30-Min Strategy Call
-          |
-          🔒 No Spam
-
-        </div>
-
-      </div>
-
-
+      <a href="#audit-form" class="btn btn-blue track-lead">Book Free Call</a>
     </div>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Stop Wasting Money on Ads That Don’t Convert</h1>
+        <p class="sub">Generate more qualified leads and sales with structured, performance-focused Google Ads campaigns.</p>
+        <p class="hero-proof">₹25L+ Ad Spend Managed | Supporting Growing Brands</p>
+        <div class="hero-actions">
+          <a href="#audit-form" class="btn track-lead">Apply for Free Audit</a>
+          <a href="https://pricing-phi-seven.vercel.app/" class="btn btn-blue" target="_blank" rel="noopener">View Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why Most Ads Underperform</h2>
+        <div class="grid">
+          <article class="card"><div class="card-icon">❌</div><h3>Unfocused targeting</h3><p class="muted">Budget is spent on searches and audiences that are unlikely to convert.</p></article>
+          <article class="card"><div class="card-icon">❌</div><h3>Incomplete tracking</h3><p class="muted">Decisions are made without reliable conversion and revenue data.</p></article>
+          <article class="card"><div class="card-icon">❌</div><h3>Weak messaging</h3><p class="muted">Ads and landing pages fail to match the customer’s intent.</p></article>
+          <article class="card"><div class="card-icon">❌</div><h3>No scaling framework</h3><p class="muted">Budgets are increased without controls for profitability and lead quality.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <h2>What We Do Differently</h2>
+        <div class="grid">
+          <article class="card"><h3>Campaign structure</h3><p class="muted">Campaigns organised around intent, products and business goals.</p></article>
+          <article class="card"><h3>Accurate measurement</h3><p class="muted">Tracking checks across Google Ads, GA4 and your website.</p></article>
+          <article class="card"><h3>Search intent focus</h3><p class="muted">Keywords, audiences and exclusions aligned with purchase intent.</p></article>
+          <article class="card"><h3>Controlled scaling</h3><p class="muted">Budget changes guided by CPA, ROAS, volume and lead quality.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>🎁 Your Free Google Ads Audit Includes</h2>
+        <div class="grid">
+          <article class="card"><h3>Campaign audit</h3><p class="muted">Review of structure, settings, search terms and bidding.</p></article>
+          <article class="card"><h3>Tracking check</h3><p class="muted">Review of conversions, GA4 and key tracking gaps.</p></article>
+          <article class="card"><h3>Wasted-spend analysis</h3><p class="muted">Identification of inefficient traffic, keywords and placements.</p></article>
+          <article class="card"><h3>Growth plan</h3><p class="muted">Prioritised recommendations based on your current account.</p></article>
+        </div>
+        <div class="center" style="margin-top:26px"><a href="#audit-form" class="btn btn-blue track-lead">Claim Free Audit</a></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Campaign Reporting & Case Studies</h2>
+        <p class="section-intro muted">Examples of analytics and campaign reporting used to evaluate performance. Results vary by account, offer, budget and market.</p>
+        <div class="proof-stack">
+          <article class="proof-item">
+            <h3>Live Campaign Dashboard</h3>
+            <img class="proof-image" src="https://i.ibb.co/4wvcRr0K/m-D-ss.png" alt="Example Google Analytics 4 campaign dashboard" loading="lazy" width="1200" height="700">
+            <p class="proof-caption">Google Analytics 4 reporting example</p>
+          </article>
+          <article class="proof-item">
+            <h3>Case Study: Neupril</h3>
+            <img class="proof-image" src="https://i.ibb.co/1GHzyjfg/cs.png" alt="Neupril advertising case study dashboard" loading="lazy" width="1200" height="700">
+            <p class="proof-caption">₹1.43M Revenue | 2.8x ROAS | 12K+ Conversions</p>
+            <p class="disclaimer">Case-study figures are historical examples and are not a guarantee of future performance.</p>
+          </article>
+        </div>
+        <div class="center" style="margin-top:30px"><a href="#audit-form" class="btn track-lead">Request an Account Review</a></div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>Client Feedback</h2>
+        <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+          <article class="card">“CPA reduced after account restructuring.”</article>
+          <article class="card">“Better visibility into tracking and campaign performance.”</article>
+          <article class="card">“More consistent lead flow after optimisation.”</article>
+        </div>
+        <p class="disclaimer center">Use only genuine, verifiable client feedback here. Add names or company details only with permission.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <article class="card"><h3>What budget is recommended?</h3><p class="muted">A monthly media budget of around ₹20,000 or more generally provides enough data for meaningful testing, though the right amount depends on your market.</p></article>
+          <article class="card"><h3>How quickly can results be seen?</h3><p class="muted">Early optimisation signals may appear within 2–4 weeks, but timelines vary by account history, conversion volume, offer and sales cycle.</p></article>
+          <article class="card"><h3>Do you guarantee results?</h3><p class="muted">No. Advertising performance cannot be guaranteed. Recommendations are based on available account data and recognised optimisation practices.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="audit-form" class="section section-soft">
+      <div class="container">
+        <h2>Apply for a Free Google Ads Growth Audit</h2>
+        <p class="section-intro muted">Complete the application below. Your account and business details will be reviewed before a strategy call is scheduled.</p>
+        <div class="form-shell">
+          <iframe title="Free Google Ads audit application form" src="https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/viewform?embedded=true" loading="lazy">Loading…</iframe>
+        </div>
+        <p class="disclaimer center">For reliable Google Ads conversion tracking, redirect successful submissions to a dedicated thank-you page on your own domain.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container center">
+        <h2>Ready to Review Your Google Ads Account?</h2>
+        <a href="#audit-form" class="btn btn-blue track-lead">Apply Now</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <h3>ScaleWithManish.com</h3>
+      <p>Email: <a href="mailto:Manishpanchal261@gmail.com">Manishpanchal261@gmail.com</a></p>
+      <p>Address: Kh. No. 56/3, Kishan Colony, Prahlad Pur Bangar, Delhi 110042</p>
+      <p><a href="https://privary-policy-pi.vercel.app/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://privary-policy-xpmn.vercel.app/" target="_blank" rel="noopener">Terms</a></p>
+      <p style="font-size:13px;margin-top:12px">No guaranteed results. Advertising performance varies by business, market, offer and budget.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918076509729?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20free%20Google%20Ads%20audit." class="wa track-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+
+  <div id="offerPopup" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true">
+    <div class="popup-box">
+      <button class="popup-close" type="button" aria-label="Close popup">×</button>
+      <div class="popup-content">
+        <div class="popup-left">
+          <div class="popup-badge">🔥 LIMITED-TIME AUDIT OFFER</div>
+          <h2 id="popupTitle" class="popup-title" style="text-align:left">Find What Is Wasting Your <span>Ad Budget.</span></h2>
+          <p class="muted">Get a free Google Ads and Meta Ads audit, valued at ₹5,000, with practical recommendations for improving campaign efficiency.</p>
+          <ul class="popup-list">
+            <li>✓ Google Ads account review</li>
+            <li>✓ Meta Ads overview</li>
+            <li>✓ Landing-page review</li>
+            <li>✓ GA4 and tracking check</li>
+            <li>✓ Competitor observations</li>
+            <li>✓ 30-day priority plan</li>
+          </ul>
+          <a href="#audit-form" class="btn btn-blue track-lead popup-cta" style="width:100%">Apply for My Free Audit →</a>
+          <button class="popup-skip" type="button">No thanks, continue browsing</button>
+        </div>
+        <div class="popup-right">
+          <div class="dashboard">
+            <div class="metric-card">Google Ads<strong>Audit</strong></div>
+            <div class="metric-card">Meta Ads<strong>Review</strong></div>
+            <div class="metric-card">Tracking<strong>Check</strong></div>
+            <div class="metric-card">Growth<strong>Plan</strong></div>
+          </div>
+          <div class="trusted">★★★★★<br>Account-specific recommendations</div>
+          <div class="bottom-strip">100% free audit · No performance guarantees · No spam</div>
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
-
-
-<style>
-
-.popup-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.45);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:99999;
-font-family:Arial,sans-serif;
-}
-
-
-.popup-box{
-
-width:850px;
-max-width:95%;
-background:#fff;
-border-radius:20px;
-padding:35px;
-position:relative;
-box-shadow:0 20px 60px rgba(0,0,0,.25);
-
-}
-
-
-.close-btn{
-
-position:absolute;
-right:18px;
-top:12px;
-border:none;
-background:white;
-font-size:35px;
-cursor:pointer;
-
-}
-
-
-
-.offer-content{
-
-display:flex;
-gap:35px;
-
-}
-
-
-.left-section{
-width:50%;
-}
-
-
-.badge{
-
-background:#ffd633;
-display:inline-block;
-padding:8px 20px;
-border-radius:30px;
-font-weight:bold;
-font-size:14px;
-
-}
-
-
-h1{
-
-font-size:42px;
-line-height:1.05;
-margin:20px 0;
-
-}
-
-
-h1 span{
-color:#1465ff;
-}
-
-
-p{
-
-font-size:17px;
-line-height:1.5;
-color:#444;
-
-}
-
-
-ul{
-
-padding:0;
-list-style:none;
-
-}
-
-
-ul li{
-
-margin:12px 0;
-font-size:16px;
-
-}
-
-
-ul li::first-letter{
-
-color:#1465ff;
-
-}
-
-
-
-.cta-btn{
-
-display:block;
-background:#1264ff;
-color:white;
-text-align:center;
-padding:18px;
-border-radius:12px;
-text-decoration:none;
-font-size:20px;
-font-weight:bold;
-margin-top:25px;
-
-}
-
-
-
-.skip{
-
-text-align:center;
-margin-top:15px;
-text-decoration:underline;
-color:#555;
-
-}
-
-
-
-
-.right-section{
-
-width:50%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-
-}
-
-
-.dashboard{
-
-height:250px;
-background:#f5f8ff;
-border-radius:20px;
-padding:25px;
-position:relative;
-
-}
-
-
-.card{
-
-background:white;
-display:inline-block;
-width:45%;
-padding:15px;
-border-radius:10px;
-margin:5px;
-box-shadow:0 5px 15px #ddd;
-
-}
-
-
-.chart{
-
-font-size:35px;
-
-}
-
-
-
-.metric{
-
-position:absolute;
-background:white;
-padding:12px;
-border-radius:12px;
-box-shadow:0 5px 20px #ddd;
-font-size:14px;
-
-}
-
-
-.metric strong{
-
-color:#00a86b;
-font-size:18px;
-
-}
-
-
-.leads{
-
-top:20px;
-left:20px;
-
-}
-
-
-.roas{
-
-top:20px;
-right:20px;
-
-}
-
-
-.cost{
-
-bottom:20px;
-right:20px;
-
-}
-
-
-
-.trusted{
-
-text-align:center;
-font-size:18px;
-margin:20px 0;
-
-}
-
-
-.bottom-strip{
-
-background:#eef4ff;
-padding:15px;
-border-radius:15px;
-font-size:14px;
-text-align:center;
-
-}
-
-
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.offer-content{
-
-flex-direction:column;
-
-}
-
-.left-section,
-.right-section{
-
-width:100%;
-
-}
-
-
-h1{
-
-font-size:32px;
-
-}
-
-
-.popup-box{
-
-padding:25px;
-
-}
-
-.right-section{
-
-display:none;
-
-}
-
-}
-
-</style>
-
-
-
-<script>
-
-function closePopup(){
-
-document.getElementById("offerPopup").style.display="none";
-
-}
-
-
-// Show popup after 3 seconds
-
-setTimeout(function(){
-
-document.getElementById("offerPopup").style.display="flex";
-
-},3000);
-
-
-</script>
-
-<!-- Offer Popup End -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function pushEvent(eventName, details) {
+      window.dataLayer.push(Object.assign({ event: eventName }, details || {}));
+    }
+
+    document.querySelectorAll('.track-lead').forEach(function(el){
+      el.addEventListener('click', function(){
+        pushEvent('generate_lead_click', { link_text: (el.textContent || '').trim() });
+      });
+    });
+
+    document.querySelectorAll('.track-whatsapp').forEach(function(el){
+      el.addEventListener('click', function(){
+        pushEvent('whatsapp_click', { link_url: el.href });
+      });
+    });
+
+    var popup = document.getElementById('offerPopup');
+    var closeButtons = popup.querySelectorAll('.popup-close, .popup-skip, .popup-cta');
+
+    function openPopup(){
+      if (sessionStorage.getItem('auditPopupClosed') === '1') return;
+      popup.classList.add('is-open');
+      popup.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+
+    function closePopup(){
+      popup.classList.remove('is-open');
+      popup.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      sessionStorage.setItem('auditPopupClosed','1');
+    }
+
+    closeButtons.forEach(function(button){button.addEventListener('click',closePopup)});
+    popup.addEventListener('click',function(e){if(e.target===popup) closePopup()});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape') closePopup()});
+    window.setTimeout(openPopup,8000);
+
+    /*
+      IMPORTANT CONVERSION SETUP:
+      1. Configure Google Ads and GA4 tags inside GTM-W5DQG8HK.
+      2. Create a thank-you page on your own domain, e.g. /thank-you/.
+      3. Fire the Google Ads conversion tag only when that thank-you page loads.
+      4. Do not count simple button clicks as completed leads.
+    */
+  </script>
 </body>
 </html>
