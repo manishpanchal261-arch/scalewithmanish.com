@@ -229,11 +229,27 @@
     .trusted{text-align:center;margin-top:20px;font-weight:700}
     .bottom-strip{margin-top:16px;padding:12px;border-radius:12px;background:#eaf7f2;text-align:center;font-size:13px}
 
+
+
+    /* Medium blog section */
+    .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:34px}
+    .blog-card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.2s ease}
+    .blog-card:hover{transform:translateY(-4px);box-shadow:0 16px 35px rgba(15,23,42,.12)}
+    .blog-image{width:100%;height:210px;object-fit:cover;background:#eef5f2}
+    .blog-content{display:flex;flex-direction:column;flex:1;padding:22px}
+    .blog-date{margin:0 0 8px;color:var(--blue);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+    .blog-title{margin:0 0 10px;font-size:21px;line-height:1.3}
+    .blog-description{margin:0 0 18px;color:var(--muted)}
+    .blog-link{margin-top:auto;color:var(--blue-dark);font-weight:800;text-decoration:none}
+    .blog-link:hover{text-decoration:underline}
+    .blog-status{grid-column:1/-1;text-align:center;color:var(--muted)}
+
     @media (max-width:900px){
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .faq-grid{grid-template-columns:1fr}
       .popup-content{grid-template-columns:1fr}
       .popup-right{display:none}
+      .blog-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media (max-width:700px){
       .section{padding:56px 0}
@@ -252,6 +268,8 @@
       .form-shell iframe{height:1320px}
       .wa{width:52px;height:52px;padding:0;justify-content:center;font-size:0}
       .wa i{font-size:24px}
+      .blog-grid{grid-template-columns:1fr}
+      .blog-image{height:200px}
     }
   </style>
 
@@ -407,6 +425,21 @@
       </div>
     </section>
 
+
+
+    <section id="blogs" class="section section-soft">
+      <div class="container">
+        <h2>Latest Insights</h2>
+        <p class="section-intro muted">Read the latest Google Ads, performance marketing and business growth articles from Manish.</p>
+        <div id="mediumBlogs" class="blog-grid">
+          <p class="blog-status">Loading latest articles...</p>
+        </div>
+        <div class="center" style="margin-top:30px">
+          <a href="https://medium.com/@scalewithmanish" class="btn btn-blue" target="_blank" rel="noopener">View All Articles on Medium</a>
+        </div>
+      </div>
+    </section>
+
     <section id="audit-form" class="section section-soft">
       <div class="container">
         <h2>Apply for a Free Google Ads Growth Audit</h2>
@@ -511,6 +544,78 @@
     popup.addEventListener('click',function(e){if(e.target===popup) closePopup()});
     document.addEventListener('keydown',function(e){if(e.key==='Escape') closePopup()});
     window.setTimeout(openPopup,8000);
+
+    var mediumUsername = 'scalewithmanish';
+
+    function stripHtml(html) {
+      var temporaryElement = document.createElement('div');
+      temporaryElement.innerHTML = html || '';
+      return temporaryElement.textContent || temporaryElement.innerText || '';
+    }
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function getMediumImage(article) {
+      var imageMatch = (article.description || '').match(/<img[^>]+src=["']([^"']+)["']/i);
+      if (article.thumbnail) return article.thumbnail;
+      if (imageMatch && imageMatch[1]) return imageMatch[1];
+      return 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80';
+    }
+
+    function createBlogCard(article) {
+      var cleanDescription = stripHtml(article.description).trim();
+      if (cleanDescription.length > 145) cleanDescription = cleanDescription.substring(0, 145) + '...';
+
+      var dateValue = article.pubDate ? new Date(article.pubDate) : null;
+      var publishedDate = dateValue && !isNaN(dateValue.getTime())
+        ? dateValue.toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })
+        : '';
+
+      return `
+        <article class="blog-card">
+          <img class="blog-image" src="${escapeHtml(getMediumImage(article))}" alt="${escapeHtml(article.title)}" loading="lazy">
+          <div class="blog-content">
+            <p class="blog-date">${escapeHtml(publishedDate)}</p>
+            <h3 class="blog-title">${escapeHtml(article.title)}</h3>
+            <p class="blog-description">${escapeHtml(cleanDescription)}</p>
+            <a href="${escapeHtml(article.link)}" class="blog-link" target="_blank" rel="noopener">Read Article →</a>
+          </div>
+        </article>`;
+    }
+
+    async function loadMediumBlogs() {
+      var blogContainer = document.getElementById('mediumBlogs');
+      if (!blogContainer) return;
+
+      try {
+        var mediumFeedUrl = 'https://medium.com/feed/@' + encodeURIComponent(mediumUsername);
+        var apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(mediumFeedUrl);
+        var response = await fetch(apiUrl);
+        if (!response.ok) throw new Error('Unable to load Medium feed');
+
+        var data = await response.json();
+        if (!data.items || data.items.length === 0) throw new Error('No Medium articles found');
+
+        blogContainer.innerHTML = data.items.slice(0, 6).map(createBlogCard).join('');
+      } catch (error) {
+        console.error('Medium blog error:', error);
+        blogContainer.innerHTML = `
+          <p class="blog-status">
+            Articles could not be loaded right now.
+            <a href="https://medium.com/@${mediumUsername}" target="_blank" rel="noopener">View them directly on Medium.</a>
+          </p>`;
+      }
+    }
+
+    loadMediumBlogs();
+
 
     /*
       IMPORTANT CONVERSION SETUP:
