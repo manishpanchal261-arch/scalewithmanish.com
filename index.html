@@ -291,104 +291,117 @@
     margin-top:70px;
 }
 
-.footer-container{
-
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:60px;
+.swm-footer {
+  background: #17212b !important;
+  color: #ffffff !important;
+  padding: 65px 30px 25px !important;
+  margin: 70px 0 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
 }
 
-.footer-column h3{
+.swm-footer-grid {
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
 
-    font-size:34px;
-    margin-bottom:18px;
+  display: grid !important;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr !important;
+  gap: 55px !important;
+  align-items: start !important;
+  text-align: left !important;
 }
 
-.footer-column h4{
-
-    margin-bottom:18px;
-    font-size:20px;
+.swm-footer h3,
+.swm-footer h4 {
+  color: #ffffff !important;
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  text-align: left !important;
 }
 
-.footer-column p{
-
-    color:#cbd5e1;
-    line-height:1.8;
-    margin-bottom:15px;
+.swm-footer h3 {
+  font-size: 26px !important;
 }
 
-.footer-column a{
-
-    display:block;
-    color:#d6dce3;
-    text-decoration:none;
-    margin-bottom:14px;
-    transition:.25s;
+.swm-footer h4 {
+  font-size: 16px !important;
 }
 
-.footer-column a:hover{
-
-    color:#20c997;
+.swm-footer-brand p,
+.swm-footer-contact p {
+  color: #b8c2cc !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  margin: 0 0 18px !important;
+  text-align: left !important;
 }
 
-.footer-btn{
-
-    display:inline-block !important;
-
-    background:#20c997;
-    color:#fff !important;
-
-    padding:13px 22px;
-
-    border-radius:8px;
-
-    margin-top:10px;
-
-    font-weight:600;
+.swm-footer-column a,
+.swm-footer-contact a {
+  display: block !important;
+  color: #cbd3db !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  text-align: left !important;
 }
 
-.footer-bottom{
-
-    border-top:1px solid rgba(255,255,255,.12);
-
-    margin-top:45px;
-
-    padding-top:20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    flex-wrap:wrap;
-
-    gap:20px;
-
-    font-size:13px;
-
-    color:#aeb7c1;
+.swm-footer-column a:hover,
+.swm-footer-contact a:hover {
+  color: #20c997 !important;
 }
 
-@media(max-width:900px){
-
-.footer-container{
-
-grid-template-columns:1fr;
-
-text-align:center;
-
+.swm-footer-button {
+  display: inline-block !important;
+  width: auto !important;
+  background: #16a085 !important;
+  color: #ffffff !important;
+  padding: 12px 20px !important;
+  border-radius: 7px !important;
+  font-weight: 600 !important;
+  margin-top: 5px !important;
 }
 
-.footer-bottom{
+.swm-footer-bottom {
+  max-width: 1180px !important;
+  margin: 45px auto 0 !important;
+  padding-top: 20px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
 
-flex-direction:column;
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
 
-text-align:center;
-
+  color: #8f9ba7 !important;
+  font-size: 12px !important;
+  text-align: left !important;
 }
+
+@media (max-width: 900px) {
+  .swm-footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 40px !important;
+  }
 }
+
+@media (max-width: 600px) {
+  .swm-footer {
+    padding: 45px 22px 22px !important;
+  }
+
+  .swm-footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .swm-footer-bottom {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
 }
   </style>
 
@@ -579,24 +592,23 @@ text-align:center;
     </section>
   </main>
 
-  <footer class="site-footer">
+ <footer class="swm-footer">
+  <div class="swm-footer-grid">
 
-  <div class="footer-container">
-
-    <div class="footer-column">
+    <div class="swm-footer-brand">
       <h3>ScaleWithManish</h3>
 
       <p>
-        Helping businesses grow with Google Ads, Meta Ads,
-        Performance Marketing and Conversion Optimization.
+        Helping ecommerce brands, startups and service businesses grow through
+        Google Ads, Meta Ads and performance marketing.
       </p>
 
-      <a href="/#contact" class="footer-btn">
-        Get Free Audit →
+      <a href="/#contact" class="swm-footer-button">
+        Get a Free Audit
       </a>
     </div>
 
-    <div class="footer-column">
+    <div class="swm-footer-column">
       <h4>Services</h4>
 
       <a href="/google-ads-expert/">Google Ads Expert</a>
@@ -606,46 +618,35 @@ text-align:center;
       <a href="/pricing/">Pricing</a>
     </div>
 
-    <div class="footer-column">
+    <div class="swm-footer-column">
       <h4>Company</h4>
 
       <a href="/">Home</a>
       <a href="/privacy_policy/">Privacy Policy</a>
       <a href="/term-condition/">Terms & Conditions</a>
+    </div>
 
-      <br>
+    <div class="swm-footer-column swm-footer-contact">
+      <h4>Contact</h4>
 
-      <h4 style="margin-top:25px;">Contact</h4>
+      <p>Delhi, India</p>
 
-      <p>
-        📧
-        <a href="mailto:manishpanchal261@gmail.com">
-          manishpanchal261@gmail.com
-        </a>
-      </p>
-
-      <p>
-        📍 Delhi, India
-      </p>
+      <a href="mailto:manishpanchal261@gmail.com">
+        manishpanchal261@gmail.com
+      </a>
     </div>
 
   </div>
 
-  <div class="footer-bottom">
+  <div class="swm-footer-bottom">
+    <span>© 2026 ScaleWithManish. All rights reserved.</span>
 
-      <p>
-        © 2026 ScaleWithManish. All Rights Reserved.
-      </p>
-
-      <p>
-        No guaranteed results. Advertising performance varies by business,
-        competition and budget.
-      </p>
-
+    <span>
+      No guaranteed results. Advertising performance varies by business,
+      market and budget.
+    </span>
   </div>
-
 </footer>
- 
 
   <a href="https://wa.me/918076509729?text=Hi%2C%20I%20want%20to%20know%20more%20about%20the%20free%20Google%20Ads%20audit." class="wa track-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
 
