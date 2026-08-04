@@ -36,6 +36,57 @@ function createServiceList(keyword) {
     .map((service) => `<li>${escapeHtml(service)}</li>`)
     .join("\n");
 }
+function createCategoryContent(page) {
+  const keyword = page.keyword;
+  const location = page.location || "India";
+
+  return `
+<section class="content-section">
+  <div class="container">
+    <h2>Professional ${keyword} Services in ${location}</h2>
+
+    <p>
+      ScaleWithManish provides professional <strong>${keyword}</strong> services
+      for ecommerce brands, startups and service businesses across ${location}.
+      Every campaign is built around measurable business goals, accurate tracking,
+      qualified lead generation and long-term growth.
+    </p>
+
+    <h2>Why Choose ScaleWithManish?</h2>
+
+    <p>
+      Every account is managed using proven optimisation strategies including
+      campaign restructuring, conversion tracking, bidding optimisation,
+      audience refinement and continuous performance analysis.
+    </p>
+
+    <h2>Industries We Work With</h2>
+
+    <ul>
+      <li>Ecommerce Brands</li>
+      <li>Service Businesses</li>
+      <li>SaaS Companies</li>
+      <li>Healthcare</li>
+      <li>Education</li>
+      <li>Real Estate</li>
+      <li>B2B Companies</li>
+      <li>Local Businesses</li>
+    </ul>
+
+    <h2>Our Process</h2>
+
+    <ol>
+      <li>Business Audit</li>
+      <li>Competitor Research</li>
+      <li>Campaign Strategy</li>
+      <li>Campaign Launch</li>
+      <li>Weekly Optimisation</li>
+      <li>Monthly Reporting</li>
+    </ol>
+  </div>
+</section>
+`;
+}
 
 function createFaqHtml(keyword) {
   const faqs = [
@@ -234,21 +285,23 @@ for (const page of pages) {
     `generate qualified leads and scale through data-driven advertising.`;
 
   const html = template
-    .replaceAll("{{TITLE}}", escapeHtml(title))
-    .replaceAll("{{H1}}", escapeHtml(h1))
-    .replaceAll("{{DESCRIPTION}}", escapeHtml(description))
-    .replaceAll("{{KEYWORD}}", escapeHtml(page.keyword))
-    .replaceAll("{{SLUG}}", escapeHtml(page.slug))
-    .replaceAll("{{SERVICE}}", escapeHtml(service))
-    .replaceAll("{{LOCATION}}", escapeHtml(location))
-    .replaceAll("{{CATEGORY}}", escapeHtml(category))
-    .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
-    .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
-    .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
-    .replaceAll(
-      "{{RELATED_LINKS}}",
-      createRelatedLinks(page.slug, pages)
-    );
+  .replaceAll("{{TITLE}}", escapeHtml(title))
+  .replaceAll("{{H1}}", escapeHtml(h1))
+  .replaceAll("{{DESCRIPTION}}", escapeHtml(description))
+  .replaceAll("{{KEYWORD}}", escapeHtml(page.keyword))
+  .replaceAll("{{SLUG}}", escapeHtml(page.slug))
+  .replaceAll("{{SERVICE}}", escapeHtml(service))
+  .replaceAll("{{LOCATION}}", escapeHtml(location))
+  .replaceAll("{{CATEGORY}}", escapeHtml(category))
+  .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
+  .replaceAll("{{CATEGORY_CONTENT}}", createCategoryContent(page))
+  .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
+  .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
+  .replaceAll("{{CATEGORY_CONTENT}}", createCategoryContent(page))
+  .replaceAll(
+    "{{RELATED_LINKS}}",
+    createRelatedLinks(page.slug, pages)
+  );
 
   fs.mkdirSync(outputFolder, { recursive: true });
   fs.writeFileSync(outputFile, html, "utf8");
