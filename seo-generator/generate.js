@@ -168,18 +168,21 @@ for (const page of pages) {
     `generate qualified leads and scale through data-driven advertising.`;
 
   const html = template
-    .replaceAll("{{TITLE}}", escapeHtml(title))
-    .replaceAll("{{H1}}", escapeHtml(h1))
-    .replaceAll("{{DESCRIPTION}}", escapeHtml(description))
-    .replaceAll("{{KEYWORD}}", escapeHtml(page.keyword))
-    .replaceAll("{{SLUG}}", escapeHtml(page.slug))
-    .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
-    .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
-    .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
-    .replaceAll(
-      "{{RELATED_LINKS}}",
-      createRelatedLinks(page.slug, pages)
-    );
+  .replaceAll("{{TITLE}}", escapeHtml(title))
+  .replaceAll("{{H1}}", escapeHtml(h1))
+  .replaceAll("{{DESCRIPTION}}", escapeHtml(description))
+  .replaceAll("{{KEYWORD}}", escapeHtml(page.keyword))
+  .replaceAll("{{SLUG}}", escapeHtml(page.slug))
+  .replaceAll("{{SERVICE}}", escapeHtml(page.service || page.keyword))
+  .replaceAll("{{LOCATION}}", escapeHtml(page.location || "India"))
+  .replaceAll("{{CATEGORY}}", escapeHtml(page.category || "Digital Marketing"))
+  .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
+  .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
+  .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
+  .replaceAll(
+    "{{RELATED_LINKS}}",
+    createRelatedLinks(page.slug, pages)
+  );
 
   fs.mkdirSync(outputFolder, { recursive: true });
   fs.writeFileSync(outputFile, html, "utf8");

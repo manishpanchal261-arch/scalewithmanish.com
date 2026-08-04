@@ -1,27 +1,177 @@
 [
-  { "keyword": "Google Ads Consultant", "slug": "google-ads-consultant" },
-  { "keyword": "Google Ads Agency", "slug": "google-ads-agency" },
-  { "keyword": "PPC Management Services", "slug": "ppc-management-services" },
-  { "keyword": "Google Ads Specialist", "slug": "google-ads-specialist" },
-  { "keyword": "Google Ads Management", "slug": "google-ads-management" },
-  { "keyword": "Google Ads Freelancer", "slug": "google-ads-freelancer" },
-  { "keyword": "Performance Marketing Agency", "slug": "performance-marketing-agency" },
-  { "keyword": "Performance Marketing Consultant", "slug": "performance-marketing-consultant" },
-  { "keyword": "Meta Ads Agency", "slug": "meta-ads-agency" },
-  { "keyword": "Meta Ads Consultant", "slug": "meta-ads-consultant" },
-  { "keyword": "Facebook Ads Expert", "slug": "facebook-ads-expert" },
-  { "keyword": "Facebook Ads Agency", "slug": "facebook-ads-agency" },
-  { "keyword": "Digital Marketing Agency", "slug": "digital-marketing-agency" },
-  { "keyword": "Digital Marketing Consultant", "slug": "digital-marketing-consultant" },
-  { "keyword": "Ecommerce Marketing Agency", "slug": "ecommerce-marketing-agency" },
-  { "keyword": "Lead Generation Agency", "slug": "lead-generation-agency" },
-  { "keyword": "Google Shopping Expert", "slug": "google-shopping-expert" },
-  { "keyword": "Google Shopping Agency", "slug": "google-shopping-agency" },
-  { "keyword": "PMax Expert", "slug": "performance-max-expert" },
-  { "keyword": "PMax Agency", "slug": "performance-max-agency" },
-  { "keyword": "Google Ads Services", "slug": "google-ads-services" },
-  { "keyword": "Online Advertising Agency", "slug": "online-advertising-agency" },
-  { "keyword": "Conversion Rate Optimization", "slug": "conversion-rate-optimization" },
-  { "keyword": "SEM Agency", "slug": "sem-agency" },
-  { "keyword": "Search Engine Marketing Services", "slug": "search-engine-marketing-services" }
+  {
+    "keyword": "Google Ads Consultant",
+    "slug": "google-ads-consultant",
+    "service": "Google Ads Consulting",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Google Ads Agency",
+    "slug": "google-ads-agency",
+    "service": "Google Ads Management",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "PPC Management Services",
+    "slug": "ppc-management-services",
+    "service": "PPC Management",
+    "location": "India",
+    "category": "PPC"
+  },
+  {
+    "keyword": "Google Ads Specialist",
+    "slug": "google-ads-specialist",
+    "service": "Google Ads Management",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Google Ads Management",
+    "slug": "google-ads-management",
+    "service": "Google Ads Management",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Google Ads Freelancer",
+    "slug": "google-ads-freelancer",
+    "service": "Google Ads Freelance Services",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Performance Marketing Agency",
+    "slug": "performance-marketing-agency",
+    "service": "Performance Marketing",
+    "location": "India",
+    "category": "Performance Marketing"
+  },
+  {
+    "keyword": "Performance Marketing Consultant",
+    "slug": "performance-marketing-consultant",
+    "service": "Performance Marketing Consulting",
+    "location": "India",
+    "category": "Performance Marketing"
+  },
+  {
+    "keyword": "Meta Ads Agency",
+    "slug": "meta-ads-agency",
+    "service": "Meta Ads Management",
+    "location": "India",
+    "category": "Meta Ads"
+  },
+  {
+    "keyword": "Meta Ads Consultant",
+    "slug": "meta-ads-consultant",
+    "service": "Meta Ads Consulting",
+    "location": "India",
+    "category": "Meta Ads"
+  },
+  {
+    "keyword": "Facebook Ads Expert",
+    "slug": "facebook-ads-expert",
+    "service": "Facebook Ads Management",
+    "location": "India",
+    "category": "Meta Ads"
+  },
+  {
+    "keyword": "Facebook Ads Agency",
+    "slug": "facebook-ads-agency",
+    "service": "Facebook Ads Management",
+    "location": "India",
+    "category": "Meta Ads"
+  },
+  {
+    "keyword": "Digital Marketing Agency",
+    "slug": "digital-marketing-agency",
+    "service": "Digital Marketing",
+    "location": "India",
+    "category": "Digital Marketing"
+  },
+  {
+    "keyword": "Digital Marketing Consultant",
+    "slug": "digital-marketing-consultant",
+    "service": "Digital Marketing Consulting",
+    "location": "India",
+    "category": "Digital Marketing"
+  },
+  {
+    "keyword": "Ecommerce Marketing Agency",
+    "slug": "ecommerce-marketing-agency",
+    "service": "Ecommerce Marketing",
+    "location": "India",
+    "category": "Ecommerce Marketing"
+  },
+  {
+    "keyword": "Lead Generation Agency",
+    "slug": "lead-generation-agency",
+    "service": "Lead Generation",
+    "location": "India",
+    "category": "Lead Generation"
+  },
+  {
+    "keyword": "Google Shopping Expert",
+    "slug": "google-shopping-expert",
+    "service": "Google Shopping Ads",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Google Shopping Agency",
+    "slug": "google-shopping-agency",
+    "service": "Google Shopping Ads",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Performance Max Expert",
+    "slug": "performance-max-expert",
+    "service": "Performance Max Campaigns",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Performance Max Agency",
+    "slug": "performance-max-agency",
+    "service": "Performance Max Campaigns",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Google Ads Services",
+    "slug": "google-ads-services",
+    "service": "Google Ads Management",
+    "location": "India",
+    "category": "Google Ads"
+  },
+  {
+    "keyword": "Online Advertising Agency",
+    "slug": "online-advertising-agency",
+    "service": "Online Advertising",
+    "location": "India",
+    "category": "Digital Marketing"
+  },
+  {
+    "keyword": "Conversion Rate Optimization",
+    "slug": "conversion-rate-optimization",
+    "service": "Conversion Rate Optimization",
+    "location": "India",
+    "category": "CRO"
+  },
+  {
+    "keyword": "SEM Agency",
+    "slug": "sem-agency",
+    "service": "Search Engine Marketing",
+    "location": "India",
+    "category": "SEM"
+  },
+  {
+    "keyword": "Search Engine Marketing Services",
+    "slug": "search-engine-marketing-services",
+    "service": "Search Engine Marketing",
+    "location": "India",
+    "category": "SEM"
+  }
 ]
