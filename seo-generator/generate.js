@@ -147,6 +147,7 @@ ${sitemapUrls}
   console.log("Updated: /sitemap.xml");
 }
 
+
 const pages = JSON.parse(fs.readFileSync(pagesPath, "utf8"));
 const template = fs.readFileSync(templatePath, "utf8");
 
@@ -155,7 +156,29 @@ for (const page of pages) {
     console.log("Skipped invalid page:", page);
     continue;
   }
+function updateHomepageLinks(pages) {
+  const indexPath = path.join(projectRoot, "index.html");
 
+  if (!fs.existsSync(indexPath)) return;
+
+  let homepage = fs.readFileSync(indexPath, "utf8");
+
+  const links = pages
+    .map(
+      (page) =>
+        `<li><a href="/${page.slug}/">${page.keyword} in India</a></li>`
+    )
+    .join("\n");
+
+  homepage = homepage.replace(
+    "<!-- AUTO_INTERNAL_LINKS -->",
+    `<ul>\n${links}\n</ul>`
+  );
+
+  fs.writeFileSync(indexPath, homepage, "utf8");
+
+  console.log("Updated homepage internal links");
+}
   const outputFolder = path.join(projectRoot, page.slug);
   const outputFile = path.join(outputFolder, "index.html");
 
@@ -190,6 +213,6 @@ for (const page of pages) {
   console.log(`Created: /${page.slug}/index.html`);
 }
 
-updateSitemap(pages);
+updateHomepageLinks(pages);
 
 console.log(`\nDone. ${pages.length} SEO pages processed.`);
