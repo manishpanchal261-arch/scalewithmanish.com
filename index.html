@@ -285,6 +285,97 @@
       .blog-grid{grid-template-columns:1fr}
       .blog-image{height:200px}
     }
+    .site-footer {
+  background: #17212b;
+  color: #ffffff;
+  padding: 60px 24px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 50px;
+}
+
+.footer-column h3,
+.footer-column h4 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+.footer-column h3 {
+  font-size: 24px;
+}
+
+.footer-column h4 {
+  font-size: 17px;
+}
+
+.footer-column p {
+  color: #c7d0d9;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-column > a,
+.footer-legal a {
+  display: block;
+  color: #c7d0d9;
+  text-decoration: none;
+  margin-bottom: 11px;
+  font-size: 14px;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+.footer-cta {
+  display: inline-block !important;
+  width: fit-content;
+  background: #16a085;
+  color: #ffffff !important;
+  padding: 12px 18px;
+  border-radius: 7px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.footer-legal {
+  margin-top: 20px;
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #9faab5;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
   </style>
 
   <script type="application/ld+json">
@@ -310,6 +401,7 @@
     ]
   }
   </script>
+  
 </head>
 <body>
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W5DQG8HK" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -473,23 +565,64 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <h3>ScaleWithManish.com</h3>
-      <p>Email: <a href="mailto:Manishpanchal261@gmail.com">Manishpanchal261@gmail.com</a></p>
-      <p>Address: Kh. No. 56/3, Kishan Colony, Prahlad Pur Bangar, Delhi 110042</p>
-      <p><a href="https://privary-policy-pi.vercel.app/" target="_blank" rel="noopener">Privacy Policy</a> · <a href="https://privary-policy-xpmn.vercel.app/" target="_blank" rel="noopener">Terms</a></p>
-      <p style="font-size:13px;margin-top:12px">No guaranteed results. Advertising performance varies by business, market, offer and budget.</p>
-    </div>
+  <footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column footer-about">
+      <h3>ScaleWithManish</h3>
+
+      <p>
+        Performance-focused Google Ads, Meta Ads and digital marketing
+        services for ecommerce brands, startups and service businesses.
+      </p>
+
+      <a class="footer-cta" href="/#contact">
+        Get a Free Audit
+      </a>
     </div>
 
-<div class="seo-links" style="margin-top:20px; line-height:2;">
-  <a href="/google-ads-expert/">Google Ads Expert in India</a><br>
-  <a href="/performance-marketer/">Performance Marketer in India</a><br>
-  <a href="/meta-ads-expert/">Meta Ads Expert in India</a><br>
-  <a href="/digital-marketing-services/">Digital Marketing Services in India</a>
-</div>
+    <div class="footer-column">
+      <h4>Services</h4>
 
+      <a href="/google-ads-expert/">Google Ads Expert</a>
+      <a href="/performance-marketer/">Performance Marketer</a>
+      <a href="/meta-ads-expert/">Meta Ads Expert</a>
+      <a href="/digital-marketing-services/">Digital Marketing Services</a>
+      <a href="/pricing/">Pricing</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>Contact</h4>
+
+      <p>
+        <strong>Email:</strong><br>
+        <a href="mailto:manishpanchal261@gmail.com">
+          manishpanchal261@gmail.com
+        </a>
+      </p>
+
+      <p>
+        <strong>Address:</strong><br>
+        Kh. No. 56/3, Kishan Colony,<br>
+        Prahlad Pur Bangar, Delhi 110042
+      </p>
+
+      <div class="footer-legal">
+        <a href="/privacy_policy/">Privacy Policy</a>
+        <a href="/term-condition/">Terms</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 ScaleWithManish. All rights reserved.</p>
+
+    <p>
+      No guaranteed results. Advertising performance varies by business,
+      market, offer and budget.
+    </p>
+  </div>
 </footer>
  
 
