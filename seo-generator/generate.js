@@ -9,6 +9,7 @@ const projectRoot = path.resolve(__dirname, "..");
 const pagesPath = path.join(__dirname, "pages.json");
 const templatePath = path.join(__dirname, "template.html");
 const sitemapPath = path.join(projectRoot, "sitemap.xml");
+const homepagePath = path.join(projectRoot, "index.html");
 
 const baseUrl = "https://scalewithmanish-com.vercel.app";
 
@@ -40,19 +41,29 @@ function createFaqHtml(keyword) {
   const faqs = [
     {
       question: `What does a ${keyword} do?`,
-      answer: `A ${keyword} helps plan, manage and optimise advertising campaigns with a focus on measurable outcomes such as qualified leads, purchases, acquisition cost and return on ad spend.`
+      answer:
+        `A ${keyword} helps plan, manage and optimise advertising campaigns ` +
+        `with a focus on measurable outcomes such as qualified leads, ` +
+        `purchases, acquisition cost and return on ad spend.`
     },
     {
-      question: `Can you audit my existing campaigns?`,
-      answer: `Yes. Existing campaigns can be reviewed for tracking, targeting, account structure, bidding, advertisements, landing pages and wasted advertising spend.`
+      question: "Can you audit my existing campaigns?",
+      answer:
+        "Yes. Existing campaigns can be reviewed for tracking, targeting, " +
+        "account structure, bidding, advertisements, landing pages and wasted advertising spend."
     },
     {
-      question: `Do you work with businesses across India?`,
-      answer: `Yes. ScaleWithManish works remotely with ecommerce brands, startups and service businesses across India.`
+      question: "Do you work with businesses across India?",
+      answer:
+        "Yes. ScaleWithManish works remotely with ecommerce brands, " +
+        "startups and service businesses across India."
     },
     {
-      question: `How quickly can advertising results improve?`,
-      answer: `Timelines depend on account history, budget, competition, conversion tracking, the offer and the sales cycle. Advertising results cannot be guaranteed.`
+      question: "How quickly can advertising results improve?",
+      answer:
+        "Timelines depend on account history, budget, competition, " +
+        "conversion tracking, the offer and the sales cycle. " +
+        "Advertising results cannot be guaranteed."
     }
   ];
 
@@ -71,15 +82,20 @@ function createFaqSchema(keyword) {
   const faqs = [
     {
       question: `What does a ${keyword} do?`,
-      answer: `A ${keyword} plans, manages and optimises advertising campaigns around measurable business outcomes.`
+      answer:
+        `A ${keyword} plans, manages and optimises advertising campaigns ` +
+        `around measurable business outcomes.`
     },
     {
       question: "Can you audit existing campaigns?",
-      answer: "Yes. Existing campaigns can be reviewed for tracking, targeting, structure, bidding and wasted advertising spend."
+      answer:
+        "Yes. Existing campaigns can be reviewed for tracking, targeting, " +
+        "structure, bidding and wasted advertising spend."
     },
     {
       question: "Do you work with businesses across India?",
-      answer: "Yes. Services are available remotely to businesses across India."
+      answer:
+        "Yes. Services are available remotely to businesses across India."
     }
   ];
 
@@ -147,6 +163,51 @@ ${sitemapUrls}
   console.log("Updated: /sitemap.xml");
 }
 
+function updateHomepageLinks(pages) {
+  if (!fs.existsSync(homepagePath)) {
+    console.log("Skipped homepage links: index.html not found");
+    return;
+  }
+
+  let homepage = fs.readFileSync(homepagePath, "utf8");
+
+  const startMarker = "<!-- AUTO_INTERNAL_LINKS_START -->";
+  const endMarker = "<!-- AUTO_INTERNAL_LINKS_END -->";
+
+  const links = pages
+    .map(
+      (page) =>
+        `<a href="/${escapeHtml(page.slug)}/">${escapeHtml(page.keyword)}</a>`
+    )
+    .join("\n");
+
+  const linksBlock = `${startMarker}
+<div class="auto-seo-links">
+  <h4>More Services</h4>
+
+  <div class="auto-seo-links-grid">
+    ${links}
+  </div>
+</div>
+${endMarker}`;
+
+  const markerPattern = new RegExp(
+    `${startMarker}[\\s\\S]*?${endMarker}`,
+    "m"
+  );
+
+  if (homepage.includes(startMarker) && homepage.includes(endMarker)) {
+    homepage = homepage.replace(markerPattern, linksBlock);
+  } else {
+    homepage = homepage.replace(
+      "</footer>",
+      `${linksBlock}\n</footer>`
+    );
+  }
+
+  fs.writeFileSync(homepagePath, homepage, "utf8");
+  console.log("Updated: homepage internal links");
+}
 
 const pages = JSON.parse(fs.readFileSync(pagesPath, "utf8"));
 const template = fs.readFileSync(templatePath, "utf8");
@@ -156,56 +217,38 @@ for (const page of pages) {
     console.log("Skipped invalid page:", page);
     continue;
   }
-function updateHomepageLinks(pages) {
-  const indexPath = path.join(projectRoot, "index.html");
 
-  if (!fs.existsSync(indexPath)) return;
-
-  let homepage = fs.readFileSync(indexPath, "utf8");
-
-  const links = pages
-    .map(
-      (page) =>
-        `<li><a href="/${page.slug}/">${page.keyword} in India</a></li>`
-    )
-    .join("\n");
-
-  homepage = homepage.replace(
-    "<!-- AUTO_INTERNAL_LINKS -->",
-    `<ul>\n${links}\n</ul>`
-  );
-
-  fs.writeFileSync(indexPath, homepage, "utf8");
-
-  console.log("Updated homepage internal links");
-}
   const outputFolder = path.join(projectRoot, page.slug);
   const outputFile = path.join(outputFolder, "index.html");
 
-  const h1 = `${page.keyword} in India`;
+  const location = page.location || "India";
+  const service = page.service || page.keyword;
+  const category = page.category || "Digital Marketing";
+
+  const h1 = `${page.keyword} in ${location}`;
   const title = `${h1} | ScaleWithManish`;
 
   const description =
-    `Looking for ${page.keyword} in India? ` +
+    `Looking for ${page.keyword} in ${location}? ` +
     `ScaleWithManish helps businesses improve campaign performance, ` +
     `generate qualified leads and scale through data-driven advertising.`;
 
   const html = template
-  .replaceAll("{{TITLE}}", escapeHtml(title))
-  .replaceAll("{{H1}}", escapeHtml(h1))
-  .replaceAll("{{DESCRIPTION}}", escapeHtml(description))
-  .replaceAll("{{KEYWORD}}", escapeHtml(page.keyword))
-  .replaceAll("{{SLUG}}", escapeHtml(page.slug))
-  .replaceAll("{{SERVICE}}", escapeHtml(page.service || page.keyword))
-  .replaceAll("{{LOCATION}}", escapeHtml(page.location || "India"))
-  .replaceAll("{{CATEGORY}}", escapeHtml(page.category || "Digital Marketing"))
-  .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
-  .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
-  .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
-  .replaceAll(
-    "{{RELATED_LINKS}}",
-    createRelatedLinks(page.slug, pages)
-  );
+    .replaceAll("{{TITLE}}", escapeHtml(title))
+    .replaceAll("{{H1}}", escapeHtml(h1))
+    .replaceAll("{{DESCRIPTION}}", escapeHtml(description))
+    .replaceAll("{{KEYWORD}}", escapeHtml(page.keyword))
+    .replaceAll("{{SLUG}}", escapeHtml(page.slug))
+    .replaceAll("{{SERVICE}}", escapeHtml(service))
+    .replaceAll("{{LOCATION}}", escapeHtml(location))
+    .replaceAll("{{CATEGORY}}", escapeHtml(category))
+    .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
+    .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
+    .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
+    .replaceAll(
+      "{{RELATED_LINKS}}",
+      createRelatedLinks(page.slug, pages)
+    );
 
   fs.mkdirSync(outputFolder, { recursive: true });
   fs.writeFileSync(outputFile, html, "utf8");
@@ -213,6 +256,7 @@ function updateHomepageLinks(pages) {
   console.log(`Created: /${page.slug}/index.html`);
 }
 
+updateSitemap(pages);
 updateHomepageLinks(pages);
 
 console.log(`\nDone. ${pages.length} SEO pages processed.`);
