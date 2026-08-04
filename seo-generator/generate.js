@@ -25,8 +25,10 @@ for (const page of pages) {
   const description = `Looking for ${page.keyword} in India? ScaleWithManish helps businesses generate leads, improve campaign performance and scale through data-driven advertising.`;
 
   const html = template
-    .replaceAll("{{TITLE}}", title)
-    .replaceAll("{{DESCRIPTION}}", description);
+  .replaceAll("{{TITLE}}", title)
+  .replaceAll("{{DESCRIPTION}}", description)
+  .replaceAll("{{KEYWORD}}", page.keyword)
+  .replaceAll("{{SLUG}}", page.slug);
 
   fs.mkdirSync(outputFolder, { recursive: true });
   fs.writeFileSync(outputFile, html, "utf8");
