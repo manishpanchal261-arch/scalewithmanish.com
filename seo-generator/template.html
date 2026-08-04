@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-IN">
 <head>
+  <title>...</title>
+<meta name="description"...>
   <meta charset="UTF-8">
   <meta
     name="viewport"
@@ -33,6 +35,26 @@
 
   <script type="application/ld+json">
   {{FAQ_SCHEMA}}
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://scalewithmanish-com.vercel.app/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"{{KEYWORD}}",
+      "item":"https://scalewithmanish-com.vercel.app/{{SLUG}}/"
+    }
+  ]
+}
+</script>
   </script>
 
   <style>
@@ -315,6 +337,24 @@
         padding: 70px 0;
       }
     }
+    .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.breadcrumb a {
+  color: #0f766e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 
@@ -336,6 +376,18 @@
 </header>
 
 <main>
+
+  <div class="container breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <span>{{KEYWORD}}</span>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Performance-focused advertising services</div>
+
+      <h1>{{H1}}</h1>
 
   <section class="hero">
     <div class="container">
