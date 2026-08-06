@@ -520,6 +520,46 @@ function createFaqSchema(keyword) {
   );
 }
 
+function createContextualLinks(page, pages) {
+  const related = pages
+    .filter((relatedPage) => relatedPage.slug !== page.slug)
+    .slice(0, 4);
+
+  if (related.length === 0) {
+    return "";
+  }
+
+  const links = related
+    .map(
+      (relatedPage) => `
+        <li>
+          <a href="/${escapeHtml(relatedPage.slug)}/">
+            ${escapeHtml(relatedPage.keyword)}
+          </a>
+        </li>
+      `
+    )
+    .join("\n");
+
+  return `
+    <section class="section contextual-links-section">
+      <div class="container">
+        <h2>Related Marketing Services</h2>
+
+        <p>
+          Businesses investing in
+          <strong>${escapeHtml(page.keyword)}</strong>
+          often improve other areas of their marketing stack as well.
+        </p>
+
+        <ul class="contextual-links-list">
+          ${links}
+        </ul>
+      </div>
+    </section>
+  `;
+}
+
 function createRelatedLinks(currentSlug, pages) {
   return pages
     .filter((page) => page.slug !== currentSlug)
@@ -679,10 +719,13 @@ const cta = createCTA(page);
   .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
   
   .replaceAll(
-    "{{RELATED_LINKS}}",
-    createRelatedLinks(page.slug, pages)
-  );
-
+  "{{RELATED_LINKS}}",
+  createRelatedLinks(page.slug, pages)
+)
+.replaceAll(
+  "{{CONTEXTUAL_LINKS}}",
+  createContextualLinks(page, pages)
+);
   fs.mkdirSync(outputFolder, { recursive: true });
   fs.writeFileSync(outputFile, html, "utf8");
 
