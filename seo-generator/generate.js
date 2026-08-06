@@ -37,55 +37,116 @@ function createServiceList(keyword) {
     .join("\n");
 }
 function createCategoryContent(page) {
+
   const keyword = page.keyword;
   const location = page.location || "India";
+  const category = (page.category || "").toLowerCase();
+
+  let content = "";
+
+  if (category.includes("google")) {
+
+    content = `
+<h2>Why ${keyword} Matters</h2>
+
+<p>
+Google Ads is one of the fastest ways to generate qualified leads and sales.
+A properly structured account improves Quality Score, lowers CPC and increases ROI.
+</p>
+
+<h2>What We Optimise</h2>
+
+<ul>
+<li>Search Campaigns</li>
+<li>Performance Max</li>
+<li>Shopping Campaigns</li>
+<li>Demand Gen</li>
+<li>YouTube Ads</li>
+<li>Conversion Tracking</li>
+</ul>
+
+`;
+
+  }
+
+  else if (category.includes("analytics")) {
+
+    content = `
+<h2>${keyword} Services</h2>
+
+<p>
+Accurate analytics ensures every marketing decision is backed by data.
+We configure GA4, ecommerce events and attribution reporting.
+</p>
+
+<h2>Services Include</h2>
+
+<ul>
+<li>GA4 Setup</li>
+<li>Enhanced Ecommerce</li>
+<li>Events</li>
+<li>Conversions</li>
+<li>Attribution</li>
+<li>Reporting</li>
+</ul>
+
+`;
+
+  }
+
+  else if (category.includes("ppc")) {
+
+    content = `
+<h2>${keyword}</h2>
+
+<p>
+PPC campaigns require continuous optimisation.
+Our focus is reducing CPC while improving conversion rate and ROAS.
+</p>
+
+<h2>Optimisation Areas</h2>
+
+<ul>
+<li>Keyword Research</li>
+<li>Ad Copy</li>
+<li>Landing Pages</li>
+<li>Bid Strategies</li>
+<li>Audience Targeting</li>
+<li>Competitor Analysis</li>
+</ul>
+
+`;
+
+  }
+
+  else {
+
+    content = `
+<h2>${keyword}</h2>
+
+<p>
+ScaleWithManish provides professional digital marketing services designed around measurable business growth.
+</p>
+`;
+
+  }
 
   return `
-<section class="content-section">
-  <div class="container">
-    <h2>Professional ${keyword} Services in ${location}</h2>
+<section class="section">
+<div class="container">
 
-    <p>
-      ScaleWithManish provides professional <strong>${keyword}</strong> services
-      for ecommerce brands, startups and service businesses across ${location}.
-      Every campaign is built around measurable business goals, accurate tracking,
-      qualified lead generation and long-term growth.
-    </p>
+<h2>Professional ${keyword} Services in ${location}</h2>
 
-    <h2>Why Choose ScaleWithManish?</h2>
+<p>
+ScaleWithManish helps businesses generate qualified leads, improve campaign performance and scale profitably.
+</p>
 
-    <p>
-      Every account is managed using proven optimisation strategies including
-      campaign restructuring, conversion tracking, bidding optimisation,
-      audience refinement and continuous performance analysis.
-    </p>
+${content}
 
-    <h2>Industries We Work With</h2>
-
-    <ul>
-      <li>Ecommerce Brands</li>
-      <li>Service Businesses</li>
-      <li>SaaS Companies</li>
-      <li>Healthcare</li>
-      <li>Education</li>
-      <li>Real Estate</li>
-      <li>B2B Companies</li>
-      <li>Local Businesses</li>
-    </ul>
-
-    <h2>Our Process</h2>
-
-    <ol>
-      <li>Business Audit</li>
-      <li>Competitor Research</li>
-      <li>Campaign Strategy</li>
-      <li>Campaign Launch</li>
-      <li>Weekly Optimisation</li>
-      <li>Monthly Reporting</li>
-    </ol>
-  </div>
+</div>
 </section>
 `;
+
 }
 
 function createFaqHtml(keyword) {
@@ -279,10 +340,34 @@ for (const page of pages) {
   const h1 = `${page.keyword} in ${location}`;
   const title = `${h1} | ScaleWithManish`;
 
-  const description =
-    `Looking for ${page.keyword} in ${location}? ` +
-    `ScaleWithManish helps businesses improve campaign performance, ` +
-    `generate qualified leads and scale through data-driven advertising.`;
+let description = "";
+
+switch ((page.category || "").toLowerCase()) {
+
+  case "google ads":
+    description =
+      `Looking for a ${page.keyword} in ${location}? ScaleWithManish helps businesses improve Google Ads performance, reduce CPC, increase conversions and maximise ROAS.`;
+    break;
+
+  case "analytics":
+    description =
+      `Professional ${page.keyword} services in ${location}. Set up GA4, conversion tracking, ecommerce reporting and analytics for better business decisions.`;
+    break;
+
+  case "ppc":
+    description =
+      `Hire a ${page.keyword} in ${location}. Improve campaign performance, optimise CPC, increase conversions and scale profitably.`;
+    break;
+
+  case "sem":
+    description =
+      `${page.keyword} services in ${location}. Build high-performing paid search campaigns that generate qualified leads and measurable ROI.`;
+    break;
+
+  default:
+    description =
+      `Looking for ${page.keyword} in ${location}? ScaleWithManish helps businesses improve campaign performance and generate qualified leads.`;
+}
 
   const html = template
   .replaceAll("{{TITLE}}", escapeHtml(title))
@@ -297,7 +382,7 @@ for (const page of pages) {
   .replaceAll("{{CATEGORY_CONTENT}}", createCategoryContent(page))
   .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
   .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
-  .replaceAll("{{CATEGORY_CONTENT}}", createCategoryContent(page))
+  
   .replaceAll(
     "{{RELATED_LINKS}}",
     createRelatedLinks(page.slug, pages)
