@@ -479,6 +479,89 @@ color:#64748b;
 grid-template-columns:repeat(2,1fr);
 }
 }
+.featured-case-study{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:42px;
+  align-items:center;
+  padding:42px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:linear-gradient(135deg,#f7fbf9 0%,#fff8e8 100%);
+  box-shadow:var(--shadow);
+}
+
+.featured-case-copy h2{
+  margin:0 0 16px;
+  text-align:left;
+}
+
+.featured-case-copy h2::after{
+  margin:12px 0 0;
+}
+
+.case-eyebrow{
+  display:inline-block;
+  margin-bottom:12px;
+  color:var(--blue-dark);
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+
+.featured-case-copy p{
+  margin:0 0 24px;
+  color:var(--muted);
+}
+
+.case-metrics{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:26px;
+}
+
+.case-metrics div{
+  padding:18px 12px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  text-align:center;
+}
+
+.case-metrics strong{
+  display:block;
+  color:var(--blue-dark);
+  font-size:27px;
+  line-height:1.2;
+}
+
+.case-metrics span{
+  color:#64748b;
+  font-size:13px;
+  font-weight:700;
+}
+
+.featured-case-image img{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(15,23,42,.10);
+}
+
+@media(max-width:850px){
+  .featured-case-study{
+    grid-template-columns:1fr;
+    padding:28px;
+  }
+}
+
+@media(max-width:600px){
+  .case-metrics{
+    grid-template-columns:1fr;
+  }
+}
   </style>
 
   <script type="application/ld+json">
@@ -669,6 +752,65 @@ grid-template-columns:repeat(2,1fr);
 
     <section class="section">
       <div class="container">
+        <section class="section">
+  <div class="container">
+
+    <div class="featured-case-study">
+
+      <div class="featured-case-copy">
+
+        <span class="case-eyebrow">Featured Case Study</span>
+
+        <h2>How We Helped an Ecommerce Brand Scale Profitably</h2>
+
+        <p>
+          A performance-focused campaign structure, accurate conversion tracking
+          and controlled scaling helped improve overall efficiency and revenue.
+        </p>
+
+        <div class="case-metrics">
+
+          <div>
+            <strong>2.8x</strong>
+            <span>ROAS</span>
+          </div>
+
+          <div>
+            <strong>₹1.43M</strong>
+            <span>Revenue</span>
+          </div>
+
+          <div>
+            <strong>12K+</strong>
+            <span>Conversions</span>
+          </div>
+
+        </div>
+
+        <a href="#audit-form" class="btn btn-blue track-lead">
+          Request a Similar Strategy
+        </a>
+
+      </div>
+
+      <div class="featured-case-image">
+        <img
+          src="https://i.ibb.co/1GHzyjfg/cs.png"
+          alt="Ecommerce advertising case study dashboard"
+          loading="lazy"
+          width="1200"
+          height="700"
+        >
+      </div>
+
+    </div>
+
+    <p class="disclaimer center">
+      Historical example only. Results vary by business, market, offer and budget.
+    </p>
+
+  </div>
+</section>
         <h2>Campaign Reporting & Case Studies</h2>
         <p class="section-intro muted">Examples of analytics and campaign reporting used to evaluate performance. Results vary by account, offer, budget and market.</p>
         <div class="proof-stack">
