@@ -37,118 +37,345 @@ function createServiceList(keyword) {
     .join("\n");
 }
 function createCategoryContent(page) {
+  const keyword = escapeHtml(page.keyword);
+  const location = escapeHtml(page.location || "India");
+  const category = String(page.category || "Digital Marketing").toLowerCase();
 
-  const keyword = page.keyword;
-  const location = page.location || "India";
-  const category = (page.category || "").toLowerCase();
+  let intro = "";
+  let focusTitle = "";
+  let focusItems = [];
+  let approachTitle = "";
+  let approachText = "";
 
-  let content = "";
+  if (category.includes("google ads")) {
+    intro = `
+      A successful ${keyword} strategy requires more than launching campaigns.
+      Account structure, search intent, conversion tracking, landing-page quality
+      and bidding decisions must work together to generate profitable growth.
+    `;
 
-  if (category.includes("google")) {
+    focusTitle = "Google Ads Areas We Optimise";
 
-    content = `
-<h2>Why ${keyword} Matters</h2>
+    focusItems = [
+      "Search campaign structure and keyword targeting",
+      "Performance Max and Shopping campaign optimisation",
+      "Quality Score and search-term analysis",
+      "Smart bidding and budget allocation",
+      "Google Merchant Center and product-feed reviews",
+      "Conversion tracking and enhanced conversions"
+    ];
 
-<p>
-Google Ads is one of the fastest ways to generate qualified leads and sales.
-A properly structured account improves Quality Score, lowers CPC and increases ROI.
-</p>
+    approachTitle = "Our Google Ads Approach";
 
-<h2>What We Optimise</h2>
+    approachText = `
+      We review campaign data, search terms, conversion quality and business
+      profitability before making scaling decisions. The goal is to reduce wasted
+      spend while increasing qualified leads, purchases and return on ad spend.
+    `;
+  } else if (category.includes("meta")) {
+    intro = `
+      ${keyword} combines creative strategy, audience testing, conversion tracking
+      and structured campaign optimisation across Facebook and Instagram.
+      Strong performance depends on both the advertisement and the offer behind it.
+    `;
 
-<ul>
-<li>Search Campaigns</li>
-<li>Performance Max</li>
-<li>Shopping Campaigns</li>
-<li>Demand Gen</li>
-<li>YouTube Ads</li>
-<li>Conversion Tracking</li>
-</ul>
+    focusTitle = "Meta Ads Areas We Optimise";
 
-`;
+    focusItems = [
+      "Facebook and Instagram campaign structure",
+      "Creative testing and performance analysis",
+      "Prospecting and retargeting audiences",
+      "Meta Pixel and Conversion API tracking",
+      "Lead-generation and ecommerce campaigns",
+      "Budget scaling and creative fatigue monitoring"
+    ];
 
+    approachTitle = "Our Meta Ads Approach";
+
+    approachText = `
+      We test multiple creative angles, audiences and campaign structures while
+      monitoring CPA, ROAS, lead quality and conversion rate. Budgets are scaled
+      only when performance remains stable.
+    `;
+  } else if (category.includes("analytics")) {
+    intro = `
+      Reliable analytics gives businesses a clear view of which campaigns,
+      channels and customer actions are producing meaningful results.
+      ${keyword} helps improve measurement and decision-making.
+    `;
+
+    focusTitle = "Analytics and Tracking Services";
+
+    focusItems = [
+      "GA4 setup and property configuration",
+      "Google Tag Manager implementation",
+      "Ecommerce event and purchase tracking",
+      "Conversion and funnel measurement",
+      "Attribution and channel reporting",
+      "Debugging missing or duplicated events"
+    ];
+
+    approachTitle = "Our Measurement Approach";
+
+    approachText = `
+      We audit the complete tracking journey from advertisement click to final
+      conversion. Events, values, transaction IDs and attribution signals are
+      reviewed so campaign decisions are based on reliable data.
+    `;
+  } else if (category.includes("ppc")) {
+    intro = `
+      ${keyword} requires continuous management of keywords, advertisements,
+      bids, budgets and landing pages. Small inefficiencies can quickly increase
+      acquisition costs and reduce campaign profitability.
+    `;
+
+    focusTitle = "PPC Optimisation Areas";
+
+    focusItems = [
+      "Keyword and competitor research",
+      "Search-term and negative-keyword reviews",
+      "Advertisement copy and asset optimisation",
+      "Bid strategy and budget management",
+      "Landing-page and conversion-rate analysis",
+      "CPA, CPC and ROAS performance monitoring"
+    ];
+
+    approachTitle = "Our PPC Approach";
+
+    approachText = `
+      Campaigns are managed around commercial intent and measurable conversions.
+      We continuously identify wasted spend, improve relevance and allocate budget
+      toward the strongest-performing campaigns.
+    `;
+  } else if (category.includes("sem")) {
+    intro = `
+      ${keyword} helps businesses reach potential customers while they are
+      actively searching for relevant products or services. Campaign structure
+      and search intent are critical to generating qualified traffic.
+    `;
+
+    focusTitle = "Search Engine Marketing Services";
+
+    focusItems = [
+      "Paid-search strategy and account planning",
+      "Commercial keyword research",
+      "Search advertisement development",
+      "Landing-page alignment",
+      "Conversion tracking and attribution",
+      "Campaign reporting and optimisation"
+    ];
+
+    approachTitle = "Our SEM Approach";
+
+    approachText = `
+      We connect keyword intent, advertisement messaging and landing-page content
+      to create a more relevant customer journey and improve conversion efficiency.
+    `;
+  } else if (category.includes("cro")) {
+    intro = `
+      ${keyword} focuses on improving the percentage of visitors who complete
+      valuable actions such as purchases, enquiries, registrations or booked calls.
+    `;
+
+    focusTitle = "Conversion Optimisation Areas";
+
+    focusItems = [
+      "Landing-page and funnel audits",
+      "Offer and CTA analysis",
+      "Form and checkout optimisation",
+      "Mobile user-experience review",
+      "Analytics and behaviour analysis",
+      "Testing recommendations and prioritisation"
+    ];
+
+    approachTitle = "Our CRO Approach";
+
+    approachText = `
+      We identify friction across the customer journey and prioritise changes
+      based on expected impact, implementation effort and available performance data.
+    `;
+  } else if (category.includes("performance")) {
+    intro = `
+      ${keyword} combines media buying, analytics, creative testing and conversion
+      optimisation to improve customer acquisition and scalable revenue growth.
+    `;
+
+    focusTitle = "Performance Marketing Capabilities";
+
+    focusItems = [
+      "Full-funnel acquisition strategy",
+      "Google Ads and Meta Ads management",
+      "Creative and audience testing",
+      "Conversion tracking and attribution",
+      "CPA and ROAS optimisation",
+      "Controlled budget scaling"
+    ];
+
+    approachTitle = "Our Performance Approach";
+
+    approachText = `
+      Decisions are based on business KPIs including acquisition cost, revenue,
+      conversion rate and profitability—not impressions or clicks alone.
+    `;
+  } else {
+    intro = `
+      ${keyword} helps businesses build a structured digital acquisition system
+      using paid advertising, analytics and ongoing optimisation.
+    `;
+
+    focusTitle = "Digital Marketing Services";
+
+    focusItems = [
+      "Digital growth strategy",
+      "Google Ads and Meta Ads management",
+      "Lead-generation campaigns",
+      "Analytics and conversion tracking",
+      "Landing-page optimisation",
+      "Performance reporting"
+    ];
+
+    approachTitle = "Our Growth Approach";
+
+    approachText = `
+      We focus on measurable outcomes and continuously improve campaign quality,
+      tracking accuracy and conversion performance.
+    `;
   }
 
-  else if (category.includes("analytics")) {
-
-    content = `
-<h2>${keyword} Services</h2>
-
-<p>
-Accurate analytics ensures every marketing decision is backed by data.
-We configure GA4, ecommerce events and attribution reporting.
-</p>
-
-<h2>Services Include</h2>
-
-<ul>
-<li>GA4 Setup</li>
-<li>Enhanced Ecommerce</li>
-<li>Events</li>
-<li>Conversions</li>
-<li>Attribution</li>
-<li>Reporting</li>
-</ul>
-
-`;
-
-  }
-
-  else if (category.includes("ppc")) {
-
-    content = `
-<h2>${keyword}</h2>
-
-<p>
-PPC campaigns require continuous optimisation.
-Our focus is reducing CPC while improving conversion rate and ROAS.
-</p>
-
-<h2>Optimisation Areas</h2>
-
-<ul>
-<li>Keyword Research</li>
-<li>Ad Copy</li>
-<li>Landing Pages</li>
-<li>Bid Strategies</li>
-<li>Audience Targeting</li>
-<li>Competitor Analysis</li>
-</ul>
-
-`;
-
-  }
-
-  else {
-
-    content = `
-<h2>${keyword}</h2>
-
-<p>
-ScaleWithManish provides professional digital marketing services designed around measurable business growth.
-</p>
-`;
-
-  }
+  const focusList = focusItems
+    .map((item) => `<li>${escapeHtml(item)}</li>`)
+    .join("\n");
 
   return `
-<section class="section">
-<div class="container">
+    <h2>Professional ${keyword} Services in ${location}</h2>
 
-<h2>Professional ${keyword} Services in ${location}</h2>
+    <p>
+      ${intro.trim()}
+    </p>
 
-<p>
-ScaleWithManish helps businesses generate qualified leads, improve campaign performance and scale profitably.
-</p>
+    <h2>${escapeHtml(focusTitle)}</h2>
 
-${content}
+    <ul class="service-grid">
+      ${focusList}
+    </ul>
 
-</div>
-</section>
-`;
+    <h2>${escapeHtml(approachTitle)}</h2>
 
+    <p>
+      ${approachText.trim()}
+    </p>
+  `;
 }
+function createEeatSection() {
+  const linkedinUrl =
+    "https://www.linkedin.com/in/manish-747057117/";
 
+  return `
+    <div class="eeat-heading">
+      <span class="eeat-eyebrow">
+        Experience • Certifications • Performance
+      </span>
+
+      <h2>Why Businesses Trust ScaleWithManish</h2>
+
+      <p>
+        Campaign decisions are based on reliable tracking, measurable
+        business outcomes and continuous performance optimisation—not
+        vanity metrics.
+      </p>
+    </div>
+
+    <div class="eeat-grid">
+
+      <article class="eeat-card">
+        <div class="eeat-badge">5+</div>
+
+        <h3>Years of Experience</h3>
+
+        <p>
+          Hands-on performance marketing experience across ecommerce,
+          D2C, startups, lead generation and service businesses.
+        </p>
+      </article>
+
+      <article class="eeat-card">
+        <div class="eeat-badge">GAds</div>
+
+        <h3>Google Ads Certified</h3>
+
+        <p>
+          Google Ads Search certified with experience in campaign
+          strategy, account optimisation and scalable acquisition.
+        </p>
+      </article>
+
+      <article class="eeat-card">
+        <div class="eeat-badge">GA4</div>
+
+        <h3>Google Analytics Certified</h3>
+
+        <p>
+          Experienced in GA4, conversion measurement, ecommerce
+          tracking and data-backed advertising decisions.
+        </p>
+      </article>
+
+      <article class="eeat-card">
+        <div class="eeat-badge">AI</div>
+
+        <h3>AI-Powered Ads Certified</h3>
+
+        <p>
+          Certified in AI-powered performance advertising and modern
+          campaign automation and optimisation practices.
+        </p>
+      </article>
+
+      <article class="eeat-card">
+        <div class="eeat-badge">360°</div>
+
+        <h3>Multi-Platform Expertise</h3>
+
+        <p>
+          Google Ads, Meta Ads, GA4, Google Merchant Center, Shopify
+          and Klaviyo expertise within one growth-focused system.
+        </p>
+      </article>
+
+      <article class="eeat-card">
+        <div class="eeat-badge">ROAS</div>
+
+        <h3>Performance-First Approach</h3>
+
+        <p>
+          Campaigns are managed around CPA, ROAS, conversion rate,
+          lead quality and sustainable revenue growth.
+        </p>
+      </article>
+
+    </div>
+
+    <div class="eeat-profile">
+      <div>
+        <h3>Work With a Certified Performance Marketer</h3>
+
+        <p>
+          Review professional experience, certifications and marketing
+          expertise on LinkedIn.
+        </p>
+      </div>
+
+      <a
+        href="${linkedinUrl}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="eeat-profile-button"
+      >
+        View LinkedIn Profile
+      </a>
+    </div>
+  `;
+}
 function createFaqHtml(keyword) {
   const faqs = [
     {
@@ -380,6 +607,7 @@ switch ((page.category || "").toLowerCase()) {
   .replaceAll("{{CATEGORY}}", escapeHtml(category))
   .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
   .replaceAll("{{CATEGORY_CONTENT}}", createCategoryContent(page))
+  .replaceAll("{{EEAT_SECTION}}", createEeatSection())
   .replaceAll("{{FAQ_ITEMS}}", createFaqHtml(page.keyword))
   .replaceAll("{{FAQ_SCHEMA}}", createFaqSchema(page.keyword))
   
