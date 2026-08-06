@@ -376,6 +376,70 @@ function createEeatSection() {
     </div>
   `;
 }
+function createCTA(page) {
+  const category = String(page.category || "").toLowerCase();
+
+  if (category.includes("google ads")) {
+    return {
+      title: "Get a Free Google Ads Audit",
+      subtitle:
+        "Receive an account-specific review of campaign structure, tracking, wasted spend and scaling opportunities.",
+      button: "Book Google Ads Audit"
+    };
+  }
+
+  if (category.includes("analytics")) {
+    return {
+      title: "Need Better GA4 Tracking?",
+      subtitle:
+        "Get your GA4, conversion events, ecommerce tracking and reporting setup reviewed.",
+      button: "Book Tracking Audit"
+    };
+  }
+
+  if (category.includes("meta")) {
+    return {
+      title: "Improve Your Meta Ads Performance",
+      subtitle:
+        "Get a professional review of your campaign structure, creative testing, tracking and scaling strategy.",
+      button: "Book Meta Ads Audit"
+    };
+  }
+
+  if (category.includes("ppc") || category.includes("sem")) {
+    return {
+      title: "Improve Your PPC Campaigns",
+      subtitle:
+        "Review keywords, search terms, bids, advertisements, landing pages and conversion performance.",
+      button: "Book PPC Strategy Call"
+    };
+  }
+
+  if (category.includes("cro")) {
+    return {
+      title: "Improve Your Conversion Rate",
+      subtitle:
+        "Get your landing pages, forms, checkout flow and customer journey reviewed for conversion opportunities.",
+      button: "Book CRO Audit"
+    };
+  }
+
+  if (category.includes("performance")) {
+    return {
+      title: "Build a More Profitable Growth Strategy",
+      subtitle:
+        "Review your acquisition channels, tracking, creative performance and scaling opportunities.",
+      button: "Book Strategy Call"
+    };
+  }
+
+  return {
+    title: "Ready to Improve Your Advertising Performance?",
+    subtitle:
+      "Get an account-specific review of your campaigns, tracking, landing pages and potential wasted advertising spend.",
+    button: "Apply for a Free Audit"
+  };
+}
 function createFaqHtml(keyword) {
   const faqs = [
     {
@@ -595,7 +659,7 @@ switch ((page.category || "").toLowerCase()) {
     description =
       `Looking for ${page.keyword} in ${location}? ScaleWithManish helps businesses improve campaign performance and generate qualified leads.`;
 }
-
+const cta = createCTA(page);
   const html = template
   .replaceAll("{{TITLE}}", escapeHtml(title))
   .replaceAll("{{H1}}", escapeHtml(h1))
@@ -605,6 +669,9 @@ switch ((page.category || "").toLowerCase()) {
   .replaceAll("{{SERVICE}}", escapeHtml(service))
   .replaceAll("{{LOCATION}}", escapeHtml(location))
   .replaceAll("{{CATEGORY}}", escapeHtml(category))
+  .replaceAll("{{CTA_TITLE}}", escapeHtml(cta.title))
+.replaceAll("{{CTA_SUBTITLE}}", escapeHtml(cta.subtitle))
+.replaceAll("{{CTA_BUTTON}}", escapeHtml(cta.button))
   .replaceAll("{{SERVICE_LIST}}", createServiceList(page.keyword))
   .replaceAll("{{CATEGORY_CONTENT}}", createCategoryContent(page))
   .replaceAll("{{EEAT_SECTION}}", createEeatSection())
