@@ -357,22 +357,32 @@ function createEeatSection() {
 
     <div class="eeat-profile">
       <div>
-        <h3>Work With a Certified Performance Marketer</h3>
+        <h3>Work with Manish Panchal</h3>
 
-        <p>
-          Review professional experience, certifications and marketing
-          expertise on LinkedIn.
-        </p>
-      </div>
+<p>
+  Manish Panchal is a Performance Marketing Consultant focused on Google Ads,
+  Meta Ads, GA4, conversion tracking and measurable paid acquisition.
+  Review professional experience, certifications and marketing expertise below.
+</p>
+</div>
 
-      <a
-        href="${linkedinUrl}"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="eeat-profile-button"
-      >
-        View LinkedIn Profile
-      </a>
+<div class="eeat-profile-actions">
+  <a
+    href="/about/"
+    class="eeat-profile-button"
+  >
+    About Manish
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/manish-scales-ads/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="eeat-profile-button"
+  >
+    View LinkedIn Profile
+  </a>
+</div>
     </div>
   `;
 }
@@ -521,9 +531,26 @@ function createFaqSchema(keyword) {
 }
 
 function createContextualLinks(page, pages) {
-  const related = pages
-    .filter((relatedPage) => relatedPage.slug !== page.slug)
-    .slice(0, 4);
+  let related = pages
+  .filter((relatedPage) =>
+    relatedPage.slug !== page.slug &&
+    (
+      relatedPage.category === page.category ||
+      relatedPage.service === page.service
+    )
+  )
+  .slice(0, 4);
+
+if (related.length < 4) {
+  const fallback = pages
+    .filter((relatedPage) =>
+      relatedPage.slug !== page.slug &&
+      !related.some((item) => item.slug === relatedPage.slug)
+    )
+    .slice(0, 4 - related.length);
+
+  related = [...related, ...fallback];
+}
 
   if (related.length === 0) {
     return "";
@@ -676,28 +703,28 @@ let description = "";
 switch ((page.category || "").toLowerCase()) {
 
   case "google ads":
-    description =
-      `Looking for a ${page.keyword} in ${location}? ScaleWithManish helps businesses improve Google Ads performance, reduce CPC, increase conversions and maximise ROAS.`;
+   description =
+  `${page.keyword} is a Google Ads service focused on planning, managing and optimising paid search and shopping campaigns in ${location}. ScaleWithManish helps businesses improve conversion tracking, reduce wasted spend and make campaign decisions using measurable performance data.`;
     break;
 
   case "analytics":
     description =
-      `Professional ${page.keyword} services in ${location}. Set up GA4, conversion tracking, ecommerce reporting and analytics for better business decisions.`;
+  `${page.keyword} helps businesses set up and improve Google Analytics 4, conversion tracking and ecommerce measurement in ${location}. The goal is to create reliable data for reporting, attribution and advertising decisions.`;
     break;
 
   case "ppc":
     description =
-      `Hire a ${page.keyword} in ${location}. Improve campaign performance, optimise CPC, increase conversions and scale profitably.`;
+  `${page.keyword} is a paid advertising service focused on campaign structure, keyword targeting, bidding and conversion optimisation in ${location}. ScaleWithManish uses performance data to improve efficiency, lead quality and return on advertising spend.`;
     break;
 
   case "sem":
     description =
-      `${page.keyword} services in ${location}. Build high-performing paid search campaigns that generate qualified leads and measurable ROI.`;
+  `${page.keyword} focuses on using paid search campaigns to reach people actively searching for relevant products or services in ${location}. Campaigns are structured around search intent, conversion tracking and measurable business outcomes.`;
     break;
 
   default:
     description =
-      `Looking for ${page.keyword} in ${location}? ScaleWithManish helps businesses improve campaign performance and generate qualified leads.`;
+  `${page.keyword} is a performance marketing service designed to help businesses in ${location} improve paid acquisition, tracking and conversion performance. ScaleWithManish focuses on measurable outcomes, reliable data and continuous optimisation.`;
 }
 const cta = createCTA(page);
   const html = template

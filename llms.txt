@@ -1,0 +1,39 @@
+# ScaleWithManish
+
+> ScaleWithManish is a performance marketing consultancy focused on Google Ads, Meta Ads, conversion tracking, Google Analytics 4, Google Tag Manager, ecommerce marketing and lead generation.
+
+## About
+
+ScaleWithManish is led by Manish Panchal, a Performance Marketing Consultant helping ecommerce brands, startups and service businesses improve paid advertising performance and conversion tracking.
+
+- About Manish: https://scalewithmanish-com.vercel.app/about/
+## Expertise
+
+Manish Panchal is the Performance Marketing Consultant behind ScaleWithManish.
+
+Primary areas of expertise:
+- Google Ads
+- Meta Ads
+- Performance Marketing
+- Google Analytics 4 (GA4)
+- Google Tag Manager
+- Conversion Tracking
+- Ecommerce Marketing
+- Lead Generation
+
+## Core Services
+
+- Google Ads Expert: https://scalewithmanish-com.vercel.app/google-ads-expert/
+- Google Ads Consultant: https://scalewithmanish-com.vercel.app/google-ads-consultant/
+- Meta Ads Expert: https://scalewithmanish-com.vercel.app/meta-ads-expert/
+- Performance Marketer: https://scalewithmanish-com.vercel.app/performance-marketer/
+- Google Ads Conversion Tracking: https://scalewithmanish-com.vercel.app/google-ads-conversion-tracking/
+- GA4 Consultant: https://scalewithmanish-com.vercel.app/ga4-consultant/
+- Google Tag Manager Consultant: https://scalewithmanish-com.vercel.app/google-tag-manager-consultant/
+- Google Merchant Center Expert: https://scalewithmanish-com.vercel.app/google-merchant-center-expert/
+- Ecommerce Marketing Agency: https://scalewithmanish-com.vercel.app/ecommerce-marketing-agency/
+
+## Contact
+
+For performance marketing and advertising enquiries, visit:
+https://scalewithmanish-com.vercel.app/
