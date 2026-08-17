@@ -593,21 +593,147 @@ color:#fff;
 .header-text-link:hover{
   color:#16a085 !important;
 }
+.homepage-expert {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
+  align-items: center;
+  padding: 42px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(23,33,43,.06);
+}
+
+.homepage-expert-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.expert-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #0f7f6f;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.homepage-expert-copy h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.expert-mini-proof {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.expert-mini-proof div {
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f7fbf9;
+}
+
+.expert-mini-proof strong {
+  display: block;
+  color: #17212b;
+  font-size: 18px;
+}
+
+.expert-mini-proof span {
+  display: block;
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.expert-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+
+  .homepage-expert {
+    grid-template-columns: 1fr;
+    padding: 26px;
+  }
+
+  .homepage-expert-image {
+    max-width: 260px;
+    margin: auto;
+  }
+
+  .expert-mini-proof {
+    grid-template-columns: 1fr;
+  }
+
+}
  </style>
 
  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
+
     {
-      "@type": "ProfessionalService",
-      "@id": "https://scalewithmanish-com.vercel.app/#business",
+      "@type": "Person",
+      "@id": "https://scalewithmanish.com/#manish-panchal",
+      "name": "Manish Panchal",
+      "url": "https://scalewithmanish.com/about/",
+      "image": "https://i.ibb.co/V0hFF4z2/hs.png",
+      "jobTitle": [
+        "Google Ads Expert",
+        "Performance Marketing Consultant"
+      ],
+      "description": "Manish Panchal is a Google Ads expert and performance marketing consultant in India helping ecommerce brands, startups and service businesses improve paid customer acquisition.",
+      "sameAs": [
+        "https://www.linkedin.com/in/manish-scales-ads/",
+        "https://www.instagram.com/scalewithmanish2026/",
+        "https://www.facebook.com/profile.php?id=61591232161156",
+        "https://www.youtube.com/@manishpanchal-z1w",
+        "https://in.pinterest.com/manishpanchal261/"
+      ],
+      "knowsAbout": [
+        "Google Ads",
+        "Google Search Ads",
+        "Google Shopping",
+        "Performance Max",
+        "Google Analytics 4",
+        "Google Tag Manager",
+        "Meta Ads",
+        "Performance Marketing",
+        "Conversion Tracking",
+        "Lead Generation",
+        "Ecommerce Advertising"
+      ],
+      "worksFor": {
+        "@id": "https://scalewithmanish.com/#organization"
+      }
+    },
+
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://scalewithmanish.com/#organization",
       "name": "ScaleWithManish",
-      "url": "https://scalewithmanish-com.vercel.app/",
+      "url": "https://scalewithmanish.com/",
       "email": "mailto:Manishpanchal261@gmail.com",
+
       "founder": {
-        "@id": "https://scalewithmanish-com.vercel.app/#manish"
+        "@id": "https://scalewithmanish.com/#manish-panchal"
       },
+
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Kh. No. 56/3, Kishan Colony, Prahlad Pur Bangar",
@@ -615,6 +741,7 @@ color:#fff;
         "postalCode": "110042",
         "addressCountry": "IN"
       },
+
       "sameAs": [
         "https://www.instagram.com/scalewithmanish2026/",
         "https://www.facebook.com/profile.php?id=61591232161156",
@@ -623,35 +750,30 @@ color:#fff;
         "https://in.pinterest.com/manishpanchal261/"
       ]
     },
-    {
-      "@type": "Person",
-      "@id": "https://scalewithmanish-com.vercel.app/#manish",
-      "name": "Manish Panchal",
-      "url": "https://scalewithmanish-com.vercel.app/about/",
-      "jobTitle": "Performance Marketing Consultant",
-      "worksFor": {
-        "@id": "https://scalewithmanish-com.vercel.app/#business"
-      },
-      
 
-      "knowsAbout": [
-        "Google Ads",
-        "Meta Ads",
-        "Performance Marketing",
-        "Google Analytics 4",
-        "Google Tag Manager",
-        "Google Merchant Center",
-        "Conversion Tracking",
-        "Ecommerce Marketing",
-        "Lead Generation"
-      ],
-      "sameAs": [
-        "https://www.linkedin.com/in/manish-scales-ads/",
-        "https://www.instagram.com/scalewithmanish2026/",
-        "https://www.youtube.com/@manishpanchal-z1w",
-        "https://in.pinterest.com/manishpanchal261/"
-      ]
+    {
+      "@type": "WebSite",
+      "@id": "https://scalewithmanish.com/#website",
+      "url": "https://scalewithmanish.com/",
+      "name": "ScaleWithManish",
+      "publisher": {
+        "@id": "https://scalewithmanish.com/#organization"
+      }
+    },
+
+    {
+      "@type": "WebPage",
+      "@id": "https://scalewithmanish.com/#webpage",
+      "url": "https://scalewithmanish.com/",
+      "name": "ScaleWithManish",
+      "about": {
+        "@id": "https://scalewithmanish.com/#manish-panchal"
+      },
+      "mainEntity": {
+        "@id": "https://scalewithmanish.com/#organization"
+      }
     }
+
   ]
 }
 </script>
@@ -818,6 +940,85 @@ color:#fff;
 </section>
 <section class="section">
   <div class="container">
+    <section class="section" id="about-manish">
+
+  <div class="container">
+
+    <div class="homepage-expert">
+
+      <div class="homepage-expert-image">
+
+        <img
+          src="https://i.ibb.co/V0hFF4z2/hs.png"
+          alt="Manish Panchal - Google Ads Expert in India"
+          width="420"
+          height="420"
+          loading="lazy"
+        >
+
+      </div>
+
+      <div class="homepage-expert-copy">
+
+        <span class="expert-eyebrow">
+          Meet The Expert
+        </span>
+
+        <h2>
+          Manish Panchal — Google Ads Expert in India
+        </h2>
+
+        <p>
+          I'm Manish Panchal, a Google Ads specialist and performance
+          marketing consultant helping ecommerce brands, startups and
+          service businesses improve paid customer acquisition.
+        </p>
+
+        <p>
+          My work covers Google Search, Shopping, Performance Max,
+          GA4, conversion tracking, Meta Ads and performance marketing,
+          with campaign decisions focused on qualified leads, sales,
+          CPA and ROAS.
+        </p>
+
+        <div class="expert-mini-proof">
+
+          <div>
+            <strong>5+</strong>
+            <span>Years Experience</span>
+          </div>
+
+          <div>
+            <strong>12K+</strong>
+            <span>Conversions in Campaign Example</span>
+          </div>
+
+          <div>
+            <strong>Google Ads</strong>
+            <span>Search Certified</span>
+          </div>
+
+        </div>
+
+        <div class="expert-buttons">
+
+          <a href="/google-ads-expert/" class="btn">
+            Google Ads Expert in India
+          </a>
+
+          <a href="/about/" class="btn btn-blue">
+            About Manish
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     <h2>Why Most Ads Underperform</h2>
         <div class="grid">
           <article class="card"><div class="card-icon">❌</div><h3>Unfocused targeting</h3><p class="muted">Budget is spent on searches and audiences that are unlikely to convert.</p></article>
