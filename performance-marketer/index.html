@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,141 +9,854 @@
 
   <meta
     name="description"
-    content="Looking for a performance marketer in India? ScaleWithManish helps businesses scale through Google Ads, Meta Ads, tracking and conversion-focused strategies."
+    content="Looking for a performance marketer in India? ScaleWithManish helps ecommerce brands, startups and service businesses improve Google Ads, Meta Ads, CAC, ROAS, tracking and paid customer acquisition."
   >
+
+  <meta name="robots" content="index,follow">
 
   <link
     rel="canonical"
     href="https://scalewithmanish-com.vercel.app/performance-marketer/"
   >
 
-  <meta name="robots" content="index, follow">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Performance Marketer in India | ScaleWithManish">
+  <meta
+    property="og:description"
+    content="Performance marketing strategy across Google Ads, Meta Ads, conversion tracking, creative testing and customer acquisition."
+  >
+  <meta
+    property="og:url"
+    content="https://scalewithmanish-com.vercel.app/performance-marketer/"
+  >
+  <meta property="og:site_name" content="ScaleWithManish">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      color: #17212b;
-      line-height: 1.6;
+    :root {
+      --green: #16a085;
+      --green-dark: #0f7f6f;
+      --ink: #17212b;
+      --muted: #64748b;
+      --line: #e5e7eb;
+      --soft: #f7fbf9;
+      --white: #ffffff;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, .06);
+      --max: 1080px;
     }
 
-    header,
-    main,
-    footer {
-      max-width: 1000px;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max));
       margin: auto;
-      padding: 24px;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      margin-right: 18px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
     }
 
-    .hero {
-      padding: 70px 0;
+    nav a:hover {
+      color: var(--green);
+    }
+
+    .brand {
+      font-size: 20px;
+      font-weight: 800;
     }
 
     .button {
-      display: inline-block;
-      padding: 14px 22px;
-      background: #16a085;
-      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: var(--green);
+      color: #fff;
       text-decoration: none;
-      border-radius: 6px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .button:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 90px 0 80px;
+      background:
+        radial-gradient(circle at top left, rgba(22,160,133,.11), transparent 35%),
+        #fff;
+    }
+
+    .hero-inner {
+      max-width: 830px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--green-dark);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(38px, 6vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: clamp(27px, 4vw, 38px);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    h3 {
+      margin: 0 0 9px;
+      font-size: 19px;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 19px;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .secondary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+      text-decoration: none;
+      font-weight: 800;
     }
 
     section {
-      padding: 30px 0;
+      padding: 72px 0;
+    }
+
+    .section-soft {
+      background: var(--soft);
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      margin-bottom: 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      counter-reset: steps;
+    }
+
+    .process .card {
+      counter-increment: steps;
+    }
+
+    .process .card::before {
+      content: "0" counter(steps);
+      display: block;
+      margin-bottom: 15px;
+      color: var(--green);
+      font-weight: 900;
+      font-size: 15px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .metric-list div {
+      padding: 15px 17px;
+      border-left: 4px solid var(--green);
+      background: var(--soft);
+      border-radius: 8px;
+    }
+
+    .internal-link {
+      color: var(--green-dark);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .faq-item p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .cta {
+      padding: 46px;
+      border-radius: 18px;
+      background: #17212b;
+      color: #fff;
+      text-align: center;
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 0 auto 24px;
+      color: #cbd5e1;
+    }
+
+    footer {
+      padding: 38px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .grid,
+      .service-grid,
+      .process,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        align-items: flex-start;
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions a {
+        width: 100%;
+      }
+
+      .cta {
+        padding: 32px 22px;
+      }
     }
   </style>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://scalewithmanish-com.vercel.app/performance-marketer/#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does a performance marketer do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A performance marketer manages paid customer acquisition across channels such as Google Ads and Meta Ads while using conversion tracking, CAC, ROAS, creative performance and funnel data to improve measurable business outcomes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I hire a performance marketer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consider hiring a performance marketer when advertising spend is increasing without consistent growth, tracking is unreliable, customer acquisition costs are rising or your business needs a clearer testing and scaling strategy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is performance marketing only about ROAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. ROAS is useful but should be considered alongside CAC, AOV, margins, conversion rate, customer quality and overall business profitability."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a performance marketer manage Google Ads and Meta Ads together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Google Ads can capture existing search demand while Meta Ads can help create and expand demand through audiences and creative testing. The right channel mix depends on the business."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is conversion tracking important in performance marketing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conversion tracking helps determine which campaigns, ads and channels are contributing to meaningful business outcomes. Without reliable tracking, optimisation decisions can be based on incomplete information."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can a performance marketer audit existing campaigns?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Existing campaigns can be reviewed for conversion tracking, targeting, creative performance, search terms, bidding, landing pages, attribution and wasted advertising spend."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
 
 <header>
-  <nav>
-    <a href="/">ScaleWithManish</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/#contact">Contact</a>
-  </nav>
+  <div class="container">
+    <nav>
+      <a class="brand" href="/">ScaleWithManish</a>
+
+      <div class="nav-links">
+        <a href="/google-ads-expert/">Google Ads</a>
+        <a href="/meta-ads-expert/">Meta Ads</a>
+        <a href="/google-ads-consultant/">Google Ads Consultant</a>
+        <a href="/pricing/">Pricing</a>
+      </div>
+
+      <a class="button" href="/#audit-form">Book Free Audit</a>
+    </nav>
+  </div>
 </header>
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
-    <h1>Performance Marketer in India</h1>
+    <div class="container">
+      <div class="hero-inner">
 
-    <p>
-      ScaleWithManish helps ecommerce brands, startups and service businesses
-      generate measurable growth through Google Ads, Meta Ads, analytics,
-      conversion tracking and campaign optimization.
-    </p>
+        <span class="eyebrow">Performance Marketing Consultant</span>
 
-    <a class="button" href="/#contact">
-      Book a Free Strategy Call
-    </a>
+        <h1>Performance Marketer in India</h1>
+
+        <p>
+          Helping ecommerce brands, startups and service businesses improve
+          paid customer acquisition through Google Ads, Meta Ads, conversion
+          tracking, creative testing and data-driven campaign optimisation.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button" href="/#audit-form">
+            Get a Free Performance Audit
+          </a>
+
+          <a class="secondary-button" href="/pricing/">
+            View Pricing
+          </a>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h2>Performance Marketing Services</h2>
 
-    <ul>
-      <li>Google Ads campaign management</li>
-      <li>Meta Ads campaign management</li>
-      <li>Performance Max campaigns</li>
-      <li>Lead generation campaigns</li>
-      <li>Ecommerce growth campaigns</li>
-      <li>GA4 and conversion tracking</li>
-      <li>Campaign audits and optimization</li>
-    </ul>
+  <!-- SERVICES -->
+  <section>
+    <div class="container">
+
+      <h2>Performance Marketing Services</h2>
+
+      <p class="section-intro">
+        Performance marketing is not limited to launching ads. The focus is
+        understanding where acquisition is working, where budget is being wasted
+        and what needs to improve before spend is increased.
+      </p>
+
+      <div class="service-grid">
+
+        <article class="card">
+          <h3>Google Ads</h3>
+          <p>
+            Search, Shopping, Performance Max, remarketing and lead generation
+            campaigns focused on search intent and measurable conversions.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Meta Ads</h3>
+          <p>
+            Facebook and Instagram campaign strategy covering creative testing,
+            audiences, customer acquisition, CAC and scaling decisions.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Conversion Tracking</h3>
+          <p>
+            Review of Google Ads, GA4 and website tracking so optimisation
+            decisions are based on meaningful conversion data.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Campaign Audits</h3>
+          <p>
+            Account reviews covering structure, targeting, search terms,
+            creative performance, bidding and wasted advertising spend.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
   </section>
 
-  <section>
-    <h2>Why Hire a Performance Marketer?</h2>
 
-    <p>
-      Performance marketing focuses on measurable business outcomes such as
-      qualified leads, purchases, cost per acquisition and return on ad spend.
-      Campaign decisions are based on data instead of assumptions.
-    </p>
+  <!-- WHAT PERFORMANCE MARKETER DOES -->
+  <section class="section-soft">
+    <div class="container">
+
+      <h2>What Does a Performance Marketer Actually Do?</h2>
+
+      <p class="section-intro">
+        A performance marketer connects advertising activity with measurable
+        business results rather than judging success only by clicks, impressions
+        or platform dashboards.
+      </p>
+
+      <div class="grid">
+
+        <article class="card">
+          <h3>Customer Acquisition</h3>
+          <p>
+            Evaluate how efficiently advertising turns budget into qualified
+            leads, customers and revenue.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Testing</h3>
+          <p>
+            Test audiences, keywords, offers, messaging, creative angles and
+            landing-page opportunities.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Optimisation</h3>
+          <p>
+            Use conversion data, CAC, CPA, ROAS and lead quality to decide
+            what should be improved, stopped or scaled.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
   </section>
 
-  <section>
-    <h2>Who This Service Is For</h2>
 
-    <p>
-      This service is suitable for ecommerce brands, local businesses,
-      startups, consultants and companies looking to scale customer acquisition
-      through paid advertising.
-    </p>
+  <!-- BUSINESS METRICS -->
+  <section>
+    <div class="container">
+
+      <div class="split">
+
+        <div>
+          <h2>Performance Marketing Goes Beyond ROAS</h2>
+
+          <p>
+            Platform ROAS is useful, but it does not always tell the complete
+            profitability story. Campaign decisions should also consider the
+            economics behind every acquisition.
+          </p>
+
+          <p>
+            A campaign can report strong ROAS while still creating weak margins,
+            low-quality customers or an unsustainable acquisition cost.
+          </p>
+        </div>
+
+        <div class="metric-list">
+          <div><strong>CAC</strong> — Customer Acquisition Cost</div>
+          <div><strong>CPA</strong> — Cost Per Acquisition</div>
+          <div><strong>ROAS</strong> — Return on Ad Spend</div>
+          <div><strong>AOV</strong> — Average Order Value</div>
+          <div><strong>Conversion Rate</strong> — Traffic to Customer Efficiency</div>
+          <div><strong>Lead Quality</strong> — Whether conversions create real business value</div>
+        </div>
+
+      </div>
+
+    </div>
   </section>
 
+
+  <!-- GOOGLE + META -->
+  <section class="section-soft">
+    <div class="container">
+
+      <h2>Google Ads and Meta Ads Serve Different Roles</h2>
+
+      <div class="service-grid">
+
+        <article class="card">
+          <h3>Google Ads Captures Existing Demand</h3>
+
+          <p>
+            People searching on Google often already have a problem, product
+            or service in mind. Campaign structure, keywords and search intent
+            therefore play a major role in performance.
+          </p>
+
+          <p>
+            Learn more about working with a
+            <a class="internal-link" href="/google-ads-expert/">
+              Google Ads expert
+            </a>.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Meta Ads Helps Create Demand</h3>
+
+          <p>
+            Meta relies heavily on creative, messaging and audience signals.
+            The advertisement itself can create interest before someone starts
+            actively searching for a solution.
+          </p>
+
+          <p>
+            Learn more about
+            <a class="internal-link" href="/meta-ads-expert/">
+              Meta Ads strategy
+            </a>.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PROCESS -->
   <section>
-    <h2>Frequently Asked Questions</h2>
+    <div class="container">
 
-    <h3>What does a performance marketer do?</h3>
-    <p>
-      A performance marketer plans, manages and optimizes paid campaigns with
-      a focus on measurable results such as leads, purchases and revenue.
-    </p>
+      <h2>My Performance Marketing Approach</h2>
 
-    <h3>Which platforms do you manage?</h3>
-    <p>
-      Campaign management can include Google Ads, Meta Ads, Search, Shopping,
-      Performance Max and remarketing.
-    </p>
+      <p class="section-intro">
+        The goal is not to change campaigns randomly. Each stage helps identify
+        what should be fixed before additional budget is committed.
+      </p>
 
-    <h3>Can you audit existing campaigns?</h3>
-    <p>
-      Yes. Existing campaigns can be reviewed for tracking, targeting,
-      creatives, bidding, landing pages and wasted advertising spend.
-    </p>
+      <div class="process">
+
+        <article class="card">
+          <h3>Tracking Review</h3>
+          <p>
+            Confirm that important leads, purchases and revenue events are
+            being measured correctly.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Account Analysis</h3>
+          <p>
+            Review historical performance, campaign structure, audiences,
+            keywords and creative performance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Funnel Review</h3>
+          <p>
+            Evaluate the offer, landing page and conversion journey alongside
+            advertising performance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Testing Plan</h3>
+          <p>
+            Prioritise meaningful tests instead of changing multiple variables
+            without a clear hypothesis.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Optimisation</h3>
+          <p>
+            Use business and campaign metrics to identify where efficiency can
+            be improved.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Controlled Scaling</h3>
+          <p>
+            Increase investment when performance and business economics support
+            additional spend.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- WHO IT IS FOR -->
+  <section class="section-soft">
+    <div class="container">
+
+      <h2>Who Should Hire a Performance Marketer?</h2>
+
+      <div class="grid">
+
+        <article class="card">
+          <h3>Ecommerce Brands</h3>
+          <p>
+            Businesses looking to improve acquisition costs, ROAS, creative
+            testing and profitable scaling.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Service Businesses</h3>
+          <p>
+            Companies that need better lead quality and more visibility into
+            cost per qualified enquiry.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Startups</h3>
+          <p>
+            Teams that need a structured paid acquisition strategy before
+            increasing advertising spend.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+
+      <h2>Frequently Asked Questions About Performance Marketing</h2>
+
+      <p class="section-intro">
+        Answers to common questions about performance marketers, paid
+        acquisition, campaign metrics and advertising strategy.
+      </p>
+
+      <div class="faq-list">
+
+        <article class="faq-item">
+          <h3>What does a performance marketer do?</h3>
+          <p>
+            A performance marketer manages paid customer acquisition across
+            channels such as Google Ads and Meta Ads while using conversion
+            tracking, CAC, ROAS, creative performance and funnel data to improve
+            measurable business outcomes.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>When should I hire a performance marketer?</h3>
+          <p>
+            Consider hiring one when advertising spend is increasing without
+            consistent growth, tracking is unreliable, customer acquisition
+            costs are rising or you need a clearer testing and scaling strategy.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Is performance marketing only about ROAS?</h3>
+          <p>
+            No. ROAS is useful but should be considered alongside CAC, AOV,
+            margins, conversion rate, customer quality and overall business
+            profitability.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Can a performance marketer manage Google Ads and Meta Ads together?</h3>
+          <p>
+            Yes. Google Ads can capture existing search demand while Meta Ads
+            can help create and expand demand through audiences and creative
+            testing. The right channel mix depends on the business.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Why is conversion tracking important in performance marketing?</h3>
+          <p>
+            Conversion tracking helps determine which campaigns, advertisements
+            and channels are contributing to meaningful business outcomes.
+            Without reliable tracking, optimisation decisions can be based on
+            incomplete information.
+          </p>
+        </article>
+
+        <article class="faq-item">
+          <h3>Can a performance marketer audit existing campaigns?</h3>
+          <p>
+            Yes. Existing campaigns can be reviewed for conversion tracking,
+            targeting, creative performance, search terms, bidding, landing pages,
+            attribution and wasted advertising spend.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+
+      <div class="cta">
+        <h2>Want to Improve Your Paid Acquisition?</h2>
+
+        <p>
+          Get an account-specific review of your advertising, conversion
+          tracking and biggest opportunities to improve campaign efficiency.
+        </p>
+
+        <a class="button" href="/#audit-form">
+          Request a Free Performance Audit
+        </a>
+      </div>
+
+    </div>
   </section>
 
 </main>
 
+
 <footer>
-  <p>© ScaleWithManish</p>
+  <div class="container">
+    <p>
+      © 2026 ScaleWithManish. Advertising performance and results are not guaranteed.
+    </p>
+  </div>
 </footer>
 
 </body>
