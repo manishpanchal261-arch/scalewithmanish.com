@@ -1067,6 +1067,37 @@ color:#fff;
     }
 
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.benchmark-button {
+  background: #ffffff;
+  color: #16a085;
+  border: 1px solid #16a085;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.benchmark-button:hover {
+  background: #16a085;
+  color: #ffffff;
+  border-color: #16a085;
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-actions .btn {
+    padding: 10px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
  </style>
 
  <script type="application/ld+json">
@@ -1276,8 +1307,15 @@ color:#fff;
         </nav>
 
       </div>
-      <a href="#audit-form" class="btn btn-blue track-lead">Book Free Call</a>
-    </div>
+      <div class="header-actions">
+  <a href="#audit-form" class="btn btn-blue track-lead">
+    Book Free Call
+  </a>
+
+  <a href="/google-ads-benchmarks-india/" class="btn benchmark-button">
+    Benchmark My Account
+  </a>
+</div>
   </header>
 
   <main>
