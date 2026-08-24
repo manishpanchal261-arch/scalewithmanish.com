@@ -467,7 +467,14 @@ white-space:nowrap;
     .proof-caption{margin-top:12px;font-weight:800}
     .disclaimer{font-size:13px;color:#6b7280;margin-top:10px}
 
-    .faq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+    .faq-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin:30px auto 0;
+  max-width:1100px;
+  padding:0 20px;
+}
     .faq-grid .card a{
   color:var(--blue-dark);
   font-weight:700;
