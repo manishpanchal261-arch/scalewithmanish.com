@@ -118,7 +118,12 @@
       gap:20px;
     }
     .brand-wrap{display:flex;align-items:center;gap:20px}
-    .logo{width:150px}
+    .logo{
+  width:190px;
+  height:auto;
+  display:block;
+  object-fit:contain;
+}
     .socials{display:flex;gap:14px;font-size:19px}
     .socials a{color:#334155;text-decoration:none}
     .socials a:hover{color:var(--orange)}
@@ -593,7 +598,7 @@ white-space:nowrap;
       .hero{padding:72px 0 64px}
       .nav{min-height:66px}
       .socials{display:none}
-      .logo{width:132px}
+      .logo{width: 155px}
       .nav>.btn{padding:10px 14px;min-height:44px;font-size:14px}
       .grid{grid-template-columns:1fr}
       .hero-actions{flex-direction:column}
@@ -1248,7 +1253,15 @@ color:#fff;
   <header>
     <div class="container nav">
       <div class="brand-wrap">
-        <a href="/" aria-label="ScaleWithManish home"><img class="logo" src="https://i.ibb.co/03QzXmM/LOGO-2.png" alt="ScaleWithManish logo" width="160" height="60"></a>
+      <a href="/" aria-label="ScaleWithManish home">
+  <img
+    class="logo"
+    src="/assets/scalewithmanish-logo.png"
+    alt="ScaleWithManish - Performance That Scales"
+    width="600"
+    height="180"
+  >
+</a>
         <nav class="socials" aria-label="Social links">
           <a href="https://www.instagram.com/scalewithmanish2026/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="https://www.facebook.com/profile.php?id=61591232161156" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
