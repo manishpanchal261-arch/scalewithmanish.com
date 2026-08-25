@@ -119,6 +119,39 @@
       .cards,.form-grid,.results{grid-template-columns:1fr}
       .stat-grid{grid-template-columns:1fr 1fr}
     }
+.citation-box {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.citation-box p {
+  margin: 6px 0 0;
+  color: var(--text);
+}
+
+.citation-btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .citation-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .citation-btn {
+    width: 100%;
+  }
+}
+
   </style>
 
   <script type="application/ld+json">
@@ -275,6 +308,18 @@
             </tbody>
           </table>
         </div>
+        <div class="citation-box">
+  <div>
+    <div class="eyebrow">Publisher citation</div>
+    <p id="citationText">
+      ScaleWithManish, “Google Ads Benchmarks for India (2026): CPC, CTR, CPL & Conversion Rates,” updated August 2026.
+    </p>
+  </div>
+
+  <button class="btn citation-btn" type="button" onclick="copyCitation()">
+    Copy Citation
+  </button>
+</div>
         <p class="source-tag" style="margin-top:12px">Compiled directionally from public 2026 India benchmark references listed in the Sources & Methodology section below.</p>
       </div>
     </section>
@@ -622,6 +667,21 @@
     (messages.length
       ? messages.join(' ')
       : 'Enter your account data to compare performance.');
+}
+function copyCitation() {
+  const citation =
+    'ScaleWithManish, “Google Ads Benchmarks for India (2026): CPC, CTR, CPL & Conversion Rates,” updated August 2026. https://scalewithmanish-com.vercel.app/google-ads-benchmarks-india/';
+
+  navigator.clipboard.writeText(citation).then(() => {
+    const btn = document.querySelector('.citation-btn');
+    const oldText = btn.textContent;
+
+    btn.textContent = 'Copied ✓';
+
+    setTimeout(() => {
+      btn.textContent = oldText;
+    }, 1800);
+  });
 }
   </script>
 </body>
