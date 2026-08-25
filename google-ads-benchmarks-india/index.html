@@ -288,7 +288,21 @@
         <div class="calculator">
           <div class="calc-panel">
             <h3>Account inputs</h3>
+            
             <div class="form-grid">
+              <div style="grid-column:1 / -1;">
+  <label for="industry">Industry</label>
+  <select id="industry">
+    <option value="general">General / Mixed</option>
+    <option value="ecommerce">Ecommerce / D2C</option>
+    <option value="realestate">Real Estate</option>
+    <option value="education">Education</option>
+    <option value="healthcare">Healthcare</option>
+    <option value="saas">SaaS / B2B</option>
+    <option value="local">Local Services</option>
+    <option value="finance">Finance</option>
+  </select>
+</div>
               <div><label for="spend">Ad spend (₹)</label><input id="spend" type="number" min="0" placeholder="100000"></div>
               <div><label for="impressions">Impressions</label><input id="impressions" type="number" min="0" placeholder="200000"></div>
               <div><label for="clicks">Clicks</label><input id="clicks" type="number" min="0" placeholder="6000"></div>
@@ -308,6 +322,10 @@
               <div class="result"><span>Cost / conversion</span><strong id="rCpa">—</strong></div>
               <div class="result"><span>Qualified lead rate</span><strong id="rQlr">—</strong></div>
               <div class="result"><span>ROAS</span><strong id="rRoas">—</strong></div>
+              <div class="result">
+  <span>Performance score</span>
+  <strong id="rScore">—</strong>
+</div>
             </div>
             <div class="benchmark-note" id="benchmarkContext">Enter your data to see a directional CTR/CVR context.</div>
           </div>
@@ -420,44 +438,191 @@
       return Number.isFinite(n) ? n : 0;
     }
     function pct(n){ return Number.isFinite(n) ? n.toFixed(2) + '%' : '—'; }
-    function inr(n){ return Number.isFinite(n) ? '₹' + n.toLocaleString('en-IN',{maximumFractionDigits:2}) : '—'; }
+    function inn(n){ return Number.isFinite(n) ? '₹' + n.toLocaleString('en-IN',{maximumFractionDigits:2}) : '—'; }
 
-    function calculateBenchmarks(){
-      const spend = val('spend');
-      const impressions = val('impressions');
-      const clicks = val('clicks');
-      const conversions = val('conversions');
-      const qualified = val('qualified');
-      const revenue = val('revenue');
+    function calculateBenchmarks() {
+  const spend = val('spend');
+  const impressions = val('impressions');
+  const clicks = val('clicks');
+  const conversions = val('conversions');
+  const qualified = val('qualified');
+  const revenue = val('revenue');
 
-      const ctr = impressions > 0 ? clicks / impressions * 100 : NaN;
-      const cpc = clicks > 0 ? spend / clicks : NaN;
-      const cvr = clicks > 0 ? conversions / clicks * 100 : NaN;
-      const cpa = conversions > 0 ? spend / conversions : NaN;
-      const qlr = conversions > 0 && qualified > 0 ? qualified / conversions * 100 : NaN;
-      const roas = spend > 0 && revenue > 0 ? revenue / spend : NaN;
+  // Core metrics
+  const ctr = impressions > 0 ? (clicks / impressions) * 100 : NaN;
+  const cpc = clicks > 0 ? spend / clicks : NaN;
+  const cvr = clicks > 0 ? (conversions / clicks) * 100 : NaN;
+  const cpa = conversions > 0 ? spend / conversions : NaN;
+  const qlr = conversions > 0 ? (qualified / conversions) * 100 : NaN;
+  const roas = spend > 0 && revenue > 0 ? revenue / spend : NaN;
 
-      document.getElementById('rCtr').textContent = pct(ctr);
-      document.getElementById('rCpc').textContent = inr(cpc);
-      document.getElementById('rCvr').textContent = pct(cvr);
-      document.getElementById('rCpa').textContent = inr(cpa);
-      document.getElementById('rQlr').textContent = pct(qlr);
-      document.getElementById('rRoas').textContent = Number.isFinite(roas) ? roas.toFixed(2) + '×' : '—';
+  // Display metrics
+  document.getElementById('rCtr').textContent =
+    Number.isFinite(ctr) ? pct(ctr) : '—';
 
-      let notes = [];
-      if(Number.isFinite(ctr)){
-        if(ctr < 3) notes.push('CTR is below the broad 3–7% competitive Search reference range.');
-        else if(ctr <= 7) notes.push('CTR sits inside the broad 3–7% competitive Search reference range.');
-        else notes.push('CTR is above the broad 3–7% reference range; check whether brand traffic is influencing it.');
-      }
-      if(Number.isFinite(cvr)){
-        if(cvr < 2) notes.push('Conversion rate is below the broad 2–7% directional range.');
-        else if(cvr <= 7) notes.push('Conversion rate sits inside the broad 2–7% directional range.');
-        else notes.push('Conversion rate is above the broad 2–7% range; validate the conversion definition and traffic mix.');
-      }
-      document.getElementById('benchmarkContext').textContent =
-        notes.length ? notes.join(' ') : 'Add impressions, clicks and conversions to see directional benchmark context.';
+  document.getElementById('rCpc').textContent =
+    Number.isFinite(cpc) ? inn(cpc) : '—';
+
+  document.getElementById('rCvr').textContent =
+    Number.isFinite(cvr) ? pct(cvr) : '—';
+
+  document.getElementById('rCpa').textContent =
+    Number.isFinite(cpa) ? inn(cpa) : '—';
+
+  document.getElementById('rQlr').textContent =
+    Number.isFinite(qlr) ? pct(qlr) : '—';
+
+  document.getElementById('rRoas').textContent =
+    Number.isFinite(roas) ? roas.toFixed(2) + '×' : '—';
+
+  // Industry benchmarks
+  const benchmarks = {
+    general: {
+      name: 'General / Mixed',
+      ctr: [3, 7],
+      cvr: [2, 7],
+      cpc: [5, 500],
+      cpl: [50, 15000]
+    },
+    ecommerce: {
+      name: 'Ecommerce / D2C',
+      ctr: [3, 7],
+      cvr: [2, 5],
+      cpc: [5, 100],
+      cpl: [300, 1000]
+    },
+    realestate: {
+      name: 'Real Estate',
+      ctr: [3, 6],
+      cvr: [2, 6],
+      cpc: [30, 250],
+      cpl: [500, 10000]
+    },
+    education: {
+      name: 'Education',
+      ctr: [3, 7],
+      cvr: [3, 8],
+      cpc: [15, 150],
+      cpl: [200, 3000]
+    },
+    healthcare: {
+      name: 'Healthcare',
+      ctr: [3, 6],
+      cvr: [2, 7],
+      cpc: [12, 150],
+      cpl: [300, 3000]
+    },
+    saas: {
+      name: 'SaaS / B2B',
+      ctr: [2, 5],
+      cvr: [2, 6],
+      cpc: [40, 350],
+      cpl: [1000, 15000]
+    },
+    local: {
+      name: 'Local Services',
+      ctr: [3, 7],
+      cvr: [3, 10],
+      cpc: [7, 100],
+      cpl: [200, 2200]
+    },
+    finance: {
+      name: 'Finance',
+      ctr: [2, 6],
+      cvr: [2, 6],
+      cpc: [50, 500],
+      cpl: [500, 10000]
     }
+  };
+
+  const industry =
+    document.getElementById('industry')?.value || 'general';
+
+  const b = benchmarks[industry] || benchmarks.general;
+
+  // Performance score
+  let score = 0;
+  let factors = 0;
+
+  if (Number.isFinite(ctr)) {
+    factors++;
+    if (ctr >= b.ctr[0] && ctr <= b.ctr[1]) score += 80;
+    else if (ctr > b.ctr[1]) score += 100;
+    else score += Math.max(20, (ctr / b.ctr[0]) * 80);
+  }
+
+  if (Number.isFinite(cvr)) {
+    factors++;
+    if (cvr >= b.cvr[0] && cvr <= b.cvr[1]) score += 80;
+    else if (cvr > b.cvr[1]) score += 100;
+    else score += Math.max(20, (cvr / b.cvr[0]) * 80);
+  }
+
+  if (Number.isFinite(cpc)) {
+    factors++;
+    if (cpc >= b.cpc[0] && cpc <= b.cpc[1]) score += 80;
+    else if (cpc < b.cpc[0]) score += 100;
+    else score += Math.max(20, (b.cpc[1] / cpc) * 80);
+  }
+
+  const finalScore = factors > 0
+    ? Math.round(score / factors)
+    : NaN;
+
+  document.getElementById('rScore').textContent =
+    Number.isFinite(finalScore) ? finalScore + '/100' : '—';
+
+  // Comparison messages
+  const messages = [];
+
+  if (Number.isFinite(ctr)) {
+    if (ctr < b.ctr[0]) {
+      messages.push(
+        `CTR is below the ${b.ctr[0]}–${b.ctr[1]}% directional range.`
+      );
+    } else if (ctr > b.ctr[1]) {
+      messages.push(
+        `CTR is above the ${b.ctr[0]}–${b.ctr[1]}% directional range.`
+      );
+    } else {
+      messages.push(
+        `CTR sits inside the ${b.ctr[0]}–${b.ctr[1]}% directional range.`
+      );
+    }
+  }
+
+  if (Number.isFinite(cvr)) {
+    if (cvr < b.cvr[0]) {
+      messages.push(
+        `Conversion rate is below the ${b.cvr[0]}–${b.cvr[1]}% directional range.`
+      );
+    } else if (cvr > b.cvr[1]) {
+      messages.push(
+        `Conversion rate is above the ${b.cvr[0]}–${b.cvr[1]}% directional range.`
+      );
+    } else {
+      messages.push(
+        `Conversion rate sits inside the ${b.cvr[0]}–${b.cvr[1]}% directional range.`
+      );
+    }
+  }
+
+  if (Number.isFinite(cpc)) {
+    if (cpc < b.cpc[0]) {
+      messages.push(`Average CPC is below the observed industry range.`);
+    } else if (cpc > b.cpc[1]) {
+      messages.push(`Average CPC is above the observed industry range.`);
+    } else {
+      messages.push(`Average CPC sits inside the observed industry range.`);
+    }
+  }
+
+  document.getElementById('benchmarkContext').innerHTML =
+    `<strong>${b.name} comparison:</strong> ` +
+    (messages.length
+      ? messages.join(' ')
+      : 'Enter your account data to compare performance.');
+}
   </script>
 </body>
 </html>
