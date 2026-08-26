@@ -1098,6 +1098,100 @@ color:#fff;
     white-space: nowrap;
   }
 }
+/* FEATURED / LISTED ON */
+
+.featured-authority{
+  padding:30px 0 34px;
+  background:rgba(255,255,255,.72);
+  border-top:1px solid rgba(15,23,42,.06);
+  border-bottom:1px solid rgba(15,23,42,.06);
+}
+
+.featured-authority-title{
+  margin:0 0 22px;
+  text-align:center;
+  color:#64748b;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.featured-authority-logos{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:55px;
+  flex-wrap:wrap;
+}
+
+.featured-authority-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:180px;
+  height:55px;
+  padding:8px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  transition:.25s ease;
+}
+
+.featured-authority-item img{
+  max-width:165px;
+  max-height:38px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  filter:grayscale(100%);
+  opacity:.70;
+  transition:.25s ease;
+}
+.featured-authority-item img[alt="Ecommerce Manager"]{
+  max-width:175px;
+  max-height:42px;
+}
+
+.featured-authority-item img[alt="Clutch"]{
+  max-width:145px;
+  max-height:40px;
+}
+
+.featured-authority-item img[alt="The Manifest"]{
+  max-width:185px;
+  max-height:48px;
+}
+.featured-authority-item:hover{
+  transform:translateY(-2px);
+}
+
+.featured-authority-item:hover img{
+  filter:grayscale(0%);
+  opacity:1;
+}
+
+@media(max-width:700px){
+
+  .featured-authority{
+    padding:25px 0;
+  }
+
+  .featured-authority-logos{
+    gap:20px;
+  }
+
+  .featured-authority-item{
+    min-width:125px;
+    height:48px;
+    padding:6px 10px;
+  }
+
+  .featured-authority-item img{
+    max-width:125px;
+    max-height:32px;
+  }
+}
+
  </style>
 
  <script type="application/ld+json">
@@ -1345,6 +1439,41 @@ color:#fff;
         </div>
       </div>
     </section>
+
+    <!-- FEATURED & LISTED ON -->
+<section class="featured-authority" aria-label="Featured and listed publications">
+  <div class="container">
+
+    <p class="featured-authority-title">Featured & Listed On</p>
+
+    <div class="featured-authority-logos">
+
+      <a class="featured-authority-item"
+         href="https://ecommercemanager.co/ecommerce-marketing/top-market-research-tools-for-shopify-insights-from-e-commerce-entrepreneurs/"
+         target="_blank"
+         rel="noopener">
+        <img src="/assets/ecommerce-manager-logo.webp" alt="Ecommerce Manager">
+      </a>
+
+      <a class="featured-authority-item"
+         href="https://clutch.co/profile/scalewithmanish-0"
+         target="_blank"
+         rel="noopener">
+        <img src="/assets/clutch-logo.webp" alt="Clutch">
+      </a>
+
+      <a class="featured-authority-item"
+         href="https://themanifest.com/company/scalewithmanish-0"
+         target="_blank"
+         rel="noopener">
+        <img src="/assets/the-manifest-logo.webp" alt="The Manifest">
+      </a>
+
+    </div>
+
+  </div>
+</section>
+<!-- END FEATURED & LISTED ON -->
 
     <section class="section">
       <div class="container">
