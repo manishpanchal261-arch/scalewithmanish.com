@@ -517,7 +517,23 @@ white-space:nowrap;
 }
 
     .form-shell{max-width:850px;margin:30px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
-    .form-shell iframe{display:block;width:100%;height:1180px;border:0}
+    .audit-native-form{padding:30px}
+    .form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .form-field{display:grid;gap:8px}
+    .form-field.full{grid-column:1/-1}
+    .form-field label,.field-label{color:var(--dark);font-size:14px;font-weight:800}
+    .form-field input,.form-field textarea,.form-field select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--dark);font:inherit;outline:none}
+    .form-field textarea{min-height:110px;resize:vertical}
+    .form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.12)}
+    .choice-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:2px}
+    .choice-grid label{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-weight:600;cursor:pointer}
+    .choice-grid input{width:auto;margin:0}
+    .form-section-title{grid-column:1/-1;margin:8px 0 -2px;padding-top:18px;border-top:1px solid var(--line);font-size:20px}
+    .form-submit-row{grid-column:1/-1;display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px}
+    .form-submit-row .btn{border:0;cursor:pointer}
+    .form-submit-row .btn:disabled{opacity:.65;cursor:wait}
+    .form-privacy{margin:0;color:var(--muted);font-size:13px}
+    .hidden-response-frame{display:none;width:0;height:0;border:0}
 
     footer{background:var(--dark);color:#cbd5e1;padding:44px 0;text-align:center}
     footer a{color:#fff}
@@ -612,7 +628,9 @@ white-space:nowrap;
       .platform-logo{padding:9px 12px;font-size:13px}
       .platform-logo i{font-size:18px}
       .popup-left{padding:28px 22px}
-      .form-shell iframe{height:1320px}
+      .audit-native-form{padding:22px 18px}
+      .form-grid{grid-template-columns:1fr}
+      .form-field.full,.form-section-title,.form-submit-row{grid-column:auto}
       .wa{width:52px;height:52px;padding:0;justify-content:center;font-size:0}
       .wa i{font-size:24px}
       .blog-grid{grid-template-columns:1fr}
@@ -1884,9 +1902,52 @@ color:#fff;
         <h2>Apply for a Free Google Ads Growth Audit</h2>
         <p class="section-intro muted">Complete the application below. Your account and business details will be reviewed before a strategy call is scheduled.</p>
         <div class="form-shell">
-          <iframe title="Free Google Ads audit application form" src="https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/viewform?embedded=true" loading="lazy">Loading…</iframe>
+          <iframe class="hidden-response-frame" id="googleFormResponse" name="googleFormResponse" title="Form submission response"></iframe>
+          <form class="audit-native-form" id="auditApplicationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSddAjTvQnMxqZk8wTWzzq-rGCEEzdtfxhijlIrD2Dv4IearBA/formResponse" method="post" target="googleFormResponse">
+            <div class="form-grid">
+              <div class="form-field"><label for="fullName">Full Name *</label><input id="fullName" name="entry.1079593617" type="text" autocomplete="name" required></div>
+              <div class="form-field"><label for="businessName">Business Name *</label><input id="businessName" name="entry.1079946915" type="text" autocomplete="organization" required></div>
+              <div class="form-field"><label for="emailAddress">Email Address *</label><input id="emailAddress" name="entry.598554165" type="email" autocomplete="email" required></div>
+              <div class="form-field"><label for="phoneNumber">Phone Number *</label><input id="phoneNumber" name="entry.72752180" type="tel" autocomplete="tel" required></div>
+              <div class="form-field"><label for="websiteUrl">Website URL</label><input id="websiteUrl" name="entry.2116247006" type="url" inputmode="url" placeholder="https://"></div>
+              <div class="form-field"><label for="businessLocation">Business Location *</label><input id="businessLocation" name="entry.1921004684" type="text" required></div>
+
+              <h3 class="form-section-title">Business Details</h3>
+              <div class="form-field full"><label for="whatYouSell">What do you sell? *</label><textarea id="whatYouSell" name="entry.1931305142" required></textarea></div>
+              <div class="form-field full"><label for="targetAudience">Main Target Audience? *</label><textarea id="targetAudience" name="entry.804293619" required></textarea></div>
+              <div class="form-field"><label for="monthlyRevenue">Current Monthly Revenue?</label><select id="monthlyRevenue" name="entry.2068644527"><option value="">Select</option><option>Under ₹1L</option><option>₹1L - ₹5L</option><option>₹5L - ₹20L</option><option>₹20L+</option></select></div>
+              <div class="form-field"><label for="currentAdSpend">Current Ad Spend?</label><select id="currentAdSpend" name="entry.501341814"><option value="">Select</option><option>No Ads Yet</option><option>Under ₹50K</option><option>₹50K - ₹2L</option><option>₹2L+</option></select></div>
+
+              <h3 class="form-section-title">Services Needed</h3>
+              <div class="form-field full"><span class="field-label">Which services do you need?</span><div class="choice-grid">
+                <label><input type="checkbox" name="entry.240232035" value="Google Ads">Google Ads</label><label><input type="checkbox" name="entry.240232035" value="Meta Ads">Meta Ads</label><label><input type="checkbox" name="entry.240232035" value="Tracking Setup">Tracking Setup</label><label><input type="checkbox" name="entry.240232035" value="Shopify Growth">Shopify Growth</label><label><input type="checkbox" name="entry.240232035" value="Account Audit">Account Audit</label><label><input type="checkbox" name="entry.240232035" value="Full Media Buying">Full Media Buying</label>
+              </div></div>
+
+              <h3 class="form-section-title">Access &amp; Tracking</h3>
+              <div class="form-field"><label for="googleAdsAccount">Google Ads account?</label><select id="googleAdsAccount" name="entry.850112914"><option value="">Select</option><option>Yes</option><option>No</option></select></div>
+              <div class="form-field"><label for="metaBusinessManager">Meta Business Manager?</label><select id="metaBusinessManager" name="entry.181080736"><option value="">Select</option><option>Yes</option><option>No</option></select></div>
+              <div class="form-field"><label for="ga4Installed">GA4 installed?</label><select id="ga4Installed" name="entry.784863956"><option value="">Select</option><option>Yes</option><option>No</option></select></div>
+              <div class="form-field"><label for="gtmInstalled">GTM installed?</label><select id="gtmInstalled" name="entry.292097710"><option value="">Select</option><option>Yes</option><option>No</option></select></div>
+
+              <h3 class="form-section-title">Goals</h3>
+              <div class="form-field full"><span class="field-label">Main Goal?</span><div class="choice-grid">
+                <label><input type="checkbox" name="entry.1497415793" value="Leads">Leads</label><label><input type="checkbox" name="entry.1497415793" value="Sales">Sales</label><label><input type="checkbox" name="entry.1497415793" value="ROAS">ROAS</label><label><input type="checkbox" name="entry.1497415793" value="Lower CPL">Lower CPL</label><label><input type="checkbox" name="entry.1497415793" value="Brand Awareness">Brand Awareness</label>
+              </div></div>
+              <div class="form-field full"><label for="biggestProblem">Biggest Problem Right Now?</label><textarea id="biggestProblem" name="entry.593616517"></textarea></div>
+
+              <h3 class="form-section-title">Contact Details</h3>
+              <div class="form-field full"><span class="field-label">Preferred Contact Method</span><div class="choice-grid">
+                <label><input type="checkbox" name="entry.2033833817" value="Whatsapp">WhatsApp</label><label><input type="checkbox" name="entry.2033833817" value="Email">Email</label><label><input type="checkbox" name="entry.2033833817" value="Call">Call</label><label><input type="checkbox" name="entry.2033833817" value="Telegram">Telegram</label><label><input type="checkbox" name="entry.2033833817" value="Linkedin">LinkedIn</label>
+              </div></div>
+              <div class="form-field"><label for="bestContactTime">Best Time To Contact</label><input id="bestContactTime" name="entry.1023161080" type="text"></div>
+              <div class="form-field full"><label for="additionalNotes">Additional Notes</label><textarea id="additionalNotes" name="entry.723453620"></textarea></div>
+
+              <input type="hidden" name="fvv" value="1"><input type="hidden" name="pageHistory" value="0,1,2,3,4,5">
+              <div class="form-submit-row"><button class="btn btn-blue" id="auditSubmitButton" type="submit">Submit Application</button><p class="form-privacy">Your details are used only to review your application.</p></div>
+            </div>
+          </form>
         </div>
-        <p class="disclaimer center">For reliable Google Ads conversion tracking, redirect successful submissions to a dedicated thank-you page on your own domain.</p>
+        <p class="disclaimer center">After submission, you’ll be redirected to a confirmation page.</p>
       </div>
     </section>
 
@@ -2156,5 +2217,52 @@ color:#fff;
       4. Do not count simple button clicks as completed leads.
     */
   </script>
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('auditApplicationForm');
+  var button = document.getElementById('auditSubmitButton');
+
+  if (!form) return;
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (button) {
+      button.disabled = true;
+      button.textContent = 'Submitting...';
+    }
+
+    fetch(form.action, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: new URLSearchParams(new FormData(form))
+    })
+    .then(function () {
+      sessionStorage.setItem('auditFormSubmitted', '1');
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'generate_lead',
+        form_name: 'free_google_ads_audit'
+      });
+
+      window.location.href = '/thank-you/';
+    })
+    .catch(function () {
+      if (button) {
+        button.disabled = false;
+        button.textContent = 'Submit Application';
+      }
+
+      alert('Submission failed. Please try again.');
+    });
+  });
+});
+</script>
 </body>
 </html>
